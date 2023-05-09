@@ -1,5 +1,5 @@
 import React from "react";
-import CookieBtn from "../../images/1464300474.svg";
+import CookieBtn from "../../../images/1464300474.svg";
 
 function CookieClicker() {
   return (

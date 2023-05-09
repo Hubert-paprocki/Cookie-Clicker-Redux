@@ -4,7 +4,7 @@ import UserStatsBox from "./UserStatsBox/UserStatsBox";
 
 function GameBox() {
   return (
-    <div>
+    <div className="">
       <CookieClicker /> <UserStatsBox />
     </div>
   );

@@ -21,7 +21,7 @@ function NavigationList() {
     return <NavigationItem key={navigation.id} name={navigation.name} />;
   });
   return (
-    <div className="flex justify-between  bg-yellow-800 bg-opacity-20 m-4 rounded-lg text-2xl">
+    <div className="flex justify-between  bg-yellow-800 bg-opacity-20  rounded-lg text-2xl mb-4">
       {renderedNavigationList}
     </div>
   );
