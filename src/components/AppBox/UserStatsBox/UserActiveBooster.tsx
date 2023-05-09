@@ -1,7 +1,11 @@
 import React from "react";
 
 function UsersActiveBooster() {
-  return <div>UsersActiveBooster</div>;
+  return (
+    <div>
+      <h2>— Active boosters —</h2>
+    </div>
+  );
 }
 
 export default UsersActiveBooster;
