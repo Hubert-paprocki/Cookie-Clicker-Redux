@@ -11,12 +11,15 @@ function Footer() {
         the screen. As you progress, you can unlock upgrades and other items to
         increase your cookie production and automate the process of clicking.
       </p>
-      <div className="w-full max-w-xl  border-l-none border-neutral-800 pl-0 md:pl-12 md:w-1/2 md:border-l-2  pt-0 md:pt-5">
-        <p className=" font-normal">
+      <div className="w-full max-w-xl  border-l-none border-neutral-800 pl-0 md:pl-12 md:w-1/2 md:border-l-2  pt-0 md:pt-5 ">
+        <p className="leading-relaxed">
           This website was made by
-          <span className="font-semibold text-purple-500 opacity-90 text-xl tracking-wide ">
-            {" "}
-            Hubert Paprocki
+          <span className="relative">
+            <span
+              className="block absolute -inset-1 -skew-y-2 translate-y-[0.11rem] bg-purple-800 px-2 mx-2 shadow-md"
+              aria-hidden="true"
+            ></span>
+            <span className="relative text-white mx-4">Hubert Paprocki</span>
           </span>
           . All rights reserved. Copyright © {currentYear}
         </p>
