@@ -1,10 +1,10 @@
 import React from "react";
-
+import { useAppSelector } from "../../../../app/hooks";
 function Score() {
-  const currScore = 0;
+  const cookieValue = useAppSelector((state) => state.cookie.value);
   return (
     <div>
-      <h2>Your Score:</h2> <p>{currScore}</p>
+      <h2>Your Score:</h2> <p>{cookieValue}</p>
     </div>
   );
 }

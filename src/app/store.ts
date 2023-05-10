@@ -1,11 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import soundReducer from './slices/soundSlice';
+import cookieReducer from './slices/cookieSlice';
 import appReducer from './slices/appSlice'
-
+import storeReducer from './slices/storeSlice'
 export const store = configureStore({
   reducer: {
-    sound: soundReducer,
-    app: appReducer
+    cookie: cookieReducer,
+    app: appReducer,
+    store: storeReducer
   },
 });
 
