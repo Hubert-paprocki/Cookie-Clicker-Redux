@@ -3,7 +3,7 @@ import ShopTileList from "./ShopTile/ShopTileLits";
 
 function ShopBox() {
   return (
-    <div className="">
+    <div className=" w-[2048px]">
       <ShopTileList />
     </div>
   );
