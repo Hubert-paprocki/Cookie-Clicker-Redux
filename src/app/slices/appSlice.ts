@@ -1,15 +1,21 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 
-type SoundState = string;
-const initialState: SoundState = "{}";
+interface AppState {
+  value: "game"|"shop"
+}
 
-export const appSlice = createSlice({
-  name: 'sound',
+const initialState = { value: "game" } as AppState
+
+const appSlice = createSlice({
+  name: 'app',
   initialState,
-  reducers: {}
-});
+  reducers: {
+    changePage(state, action: PayloadAction<string>) {
+      state.value = action.payload as AppState["value"];
+    },
+  },
+})
 
-
-// export const {  } = appSlice.actions;
-
-export default appSlice.reducer;
+export const { changePage } = appSlice.actions
+export default appSlice.reducer
