@@ -53,7 +53,7 @@ function ShopTileList() {
     );
   });
   return (
-    <div className="flex flex-wrap items-center justify-center text-2xl gap-3">
+    <div className="flex flex-wrap  text-2xl gap-3 h-full mx-4 pb-4">
       {renderedShopTileList}
     </div>
   );
