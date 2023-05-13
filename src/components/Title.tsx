@@ -1,6 +1,6 @@
 import React from "react";
 
-function Tittle() {
+function Title() {
   return (
     <h1 className=" z-10 text-7xl pb-5 text-white relative hover:scale-110 hover:-skew-y-1 duration-700 ">
       Cookie Clicker
@@ -11,4 +11,4 @@ function Tittle() {
   );
 }
 
-export default Tittle;
+export default Title;

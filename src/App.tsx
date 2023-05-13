@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./components/Footer";
 import bg from "./images/CookieBg.jpg";
 import Appbox from "./components/AppBox/AppBox";
-import Tittle from "./components/Tittle";
+import Tittle from "./components/Title";
 
 function App() {
   return (
