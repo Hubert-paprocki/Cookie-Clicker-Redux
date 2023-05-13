@@ -14,11 +14,8 @@ const cookieSlice = createSlice({
     increment(state) {
       state.value++
     },
-    incrementByAmount(state, action: PayloadAction<number>) {
-      state.value += action.payload
-    },
   },
 })
 
-export const { increment, incrementByAmount } = cookieSlice.actions
+export const { increment } = cookieSlice.actions
 export default cookieSlice.reducer

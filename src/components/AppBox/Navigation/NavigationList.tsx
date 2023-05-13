@@ -30,7 +30,7 @@ function NavigationList() {
     );
   });
   return (
-    <div className="flex justify-between  bg-yellow-800 bg-opacity-20  rounded-lg text-2xl mb-4">
+    <div className="flex justify-between  bg-yellow-800 bg-opacity-20  rounded-lg text-2xl m-4">
       {renderedNavigationList}
     </div>
   );
