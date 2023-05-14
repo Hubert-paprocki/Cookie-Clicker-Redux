@@ -14,6 +14,11 @@ const navigationList: ListedNavigation[] = [
   },
   {
     id: 2,
+    name: `scoreboard`,
+    link: `scoreboard`,
+  },
+  {
+    id: 3,
     name: `shop`,
     link: `shop`,
   },

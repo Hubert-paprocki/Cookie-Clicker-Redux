@@ -10,7 +10,7 @@ function App() {
       <div className="min-h-screen relative flex flex-col justify-center items-center pt-10">
         <Tittle />
         <div
-          className="absolute inset-0 opacity-30  z-0"
+          className="absolute inset-0 opacity-30 z-0 "
           style={{ backgroundImage: `url(${bg})` }}
         ></div>
         <div className="relative text-white flex justify-center items-center z-10">

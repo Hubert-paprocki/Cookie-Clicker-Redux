@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface AppState {
-  value: "game"|"shop"
+  value: "game"|"shop"|"scoreboard"
 }
 
 const initialState = { value: "game" } as AppState

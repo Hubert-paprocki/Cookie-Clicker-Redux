@@ -14,8 +14,11 @@ const cookieSlice = createSlice({
     increment(state) {
       state.value++
     },
+    subtractBoosterValue(state,action: PayloadAction<number>) {
+      state.value = state.value-action.payload
+    },
   },
 })
 
-export const { increment } = cookieSlice.actions
+export const { increment,subtractBoosterValue } = cookieSlice.actions
 export default cookieSlice.reducer
