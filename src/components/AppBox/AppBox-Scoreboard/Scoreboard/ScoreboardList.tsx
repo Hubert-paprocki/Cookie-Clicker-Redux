@@ -44,12 +44,9 @@ function ScoreboardList() {
   ));
 
   return (
-    <div>
-      <h2 className="text-center text-4xl">Top 10</h2>
-      <ol className="flex flex-col gap-3 items-center text-2xl m-4">
-        {renderedScoreboardList}
-      </ol>
-    </div>
+    <ol className="flex flex-col gap-3 items-center text-2xl m-4 max-h-[500px] overflow-y-scroll p-4">
+      {renderedScoreboardList}
+    </ol>
   );
 }
 
