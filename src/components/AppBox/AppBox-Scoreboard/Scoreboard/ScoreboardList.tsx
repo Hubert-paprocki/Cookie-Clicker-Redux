@@ -1,29 +1,39 @@
-import ScoreboardItem from "./ScoreboardItem";
 import React, { useEffect, useState } from "react";
-import { collection, onSnapshot, QuerySnapshot } from "@firebase/firestore";
+import { collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import { firestore } from "../../../../firebase";
+import ScoreboardItem from "./ScoreboardItem";
 
 interface Score {
+  id: string;
   username: string;
   score: number;
 }
 
 function ScoreboardList() {
   const [scoreList, setScoreList] = useState<Score[]>([]);
-  const ref = collection(firestore, "scores");
+  const scoresRef = collection(firestore, "scores");
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(ref, (querySnapshot: QuerySnapshot) => {
-      const scores: Score[] = [];
-      querySnapshot.forEach((doc) => {
-        scores.push(doc.data() as Score);
-      });
-      scores.sort((a, b) => b.score - a.score); // Sort scores in descending order
-      setScoreList(scores.slice(0, 10)); // Slice to include only the top 10 scores
-    });
+    const unsubscribe = onSnapshot(
+      scoresRef,
+      (querySnapshot: QuerySnapshot) => {
+        const newData: Score[] = querySnapshot.docs.map((doc) => {
+          const { username, score } = doc.data();
+          return {
+            id: doc.id,
+            username,
+            score,
+          };
+        });
 
-    return unsubscribe;
-  }, [ref]);
+        newData.sort((a, b) => b.score - a.score); // Sort by highest score
+
+        setScoreList(newData.slice(0, 10)); // Get top 10 scores
+      }
+    );
+
+    return () => unsubscribe();
+  }, []);
 
   const renderedScoreboardList = scoreList.map((scoreboard, index) => (
     <ScoreboardItem
@@ -35,7 +45,7 @@ function ScoreboardList() {
 
   return (
     <div>
-      <h2 className=" text-center text-4xl">Top 10</h2>
+      <h2 className="text-center text-4xl">Top 10</h2>
       <ol className="flex flex-col gap-3 items-center text-2xl m-4">
         {renderedScoreboardList}
       </ol>
