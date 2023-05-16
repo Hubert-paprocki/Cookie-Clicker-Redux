@@ -3,7 +3,7 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { buyItem } from "../../../../app/slices/shopSlice";
 import { subtractBoosterValue } from "../../../../app/slices/cookieSlice";
-
+import CookieImg from "../../../../images/1464300474.svg";
 interface ShopTileItemProps {
   name: string;
   desc: string;
@@ -34,7 +34,7 @@ function ShopTileItem({ name, desc, price }: ShopTileItemProps) {
         </p>
       </div>
       <button
-        className={`bg-green-400 bg-opacity-20 py-1 px-4 rounded-full  ${
+        className={`bg-green-400 bg-opacity-20 py-1 px-4 rounded-full flex items-center justify-center ${
           isDisabled
             ? "opacity-50 "
             : "hover:bg-opacity-50 duration-200 hover:-translate-y-0.5 active:translate-y-0 active:duration-75"
@@ -42,7 +42,8 @@ function ShopTileItem({ name, desc, price }: ShopTileItemProps) {
         onClick={handleBuyItem}
         disabled={isDisabled}
       >
-        {isDisabled ? "Item purchased" : `Buy for ${price} cookies`}
+        {isDisabled ? "Item purchased" : `Buy for ${price}`}
+        <img src={CookieImg} alt="cookie" className="h-7 pl-1.5" />
       </button>
     </div>
   );

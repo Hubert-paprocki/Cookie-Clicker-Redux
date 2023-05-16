@@ -13,7 +13,7 @@ function CookieClicker() {
   return (
     <div className="flex items-center justify-center p-10">
       <button
-        className="rounded-full active:scale-[108%] active:duration-75 hover:scale-[102.5%] duration-200"
+        className="rounded-full active:scale-[108%] active:duration-75 hover:scale-[102.5%] duration-200 opacity-80 "
         onClick={handleClick}
       >
         <img
