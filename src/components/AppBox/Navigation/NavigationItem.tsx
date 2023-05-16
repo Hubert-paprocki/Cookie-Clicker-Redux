@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppDispatch } from "../../../app/hooks";
-import { changePage } from "../../../app/slices/appSlice";
+import { changePage } from "../../../app/slices/navigationSlice";
 
 interface NavigationItemProps {
   name: string;
