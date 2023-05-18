@@ -2,7 +2,7 @@ import React from "react";
 import { useAppSelector } from "../../../../app/hooks";
 
 function UsersActiveBooster() {
-  const selectedItems = useAppSelector((state) => state.shop.selectedItems);
+  const selectedItems = useAppSelector((state) => state.boosters.selectedItems);
 
   return (
     <div>

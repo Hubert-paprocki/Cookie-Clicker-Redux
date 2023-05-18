@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { firestore } from "../../../../firebase";
 import { addDoc, collection } from "@firebase/firestore";
 import { useAppSelector } from "../../../../app/hooks";
+import Button from "../../../Button";
 
 interface Score {
   username: string;
@@ -44,12 +45,9 @@ function ScoreboardForm(): JSX.Element {
             placeholder="Anonymous"
           />
         </div>
-        <button
-          type="submit"
-          className="px-5 py-2 bg-yellow-800 bg-opacity-20 rounded-bl-lg rounded-tl-lg rounded-br-lg rounded-tr-lg duration-200 border-r-4 border-l-4 border-stone-800 text-stone-300 hover:text-stone-50 md:min-w-[217px] hover:min-w-[250px] uppercase tracking-wider"
-        >
+        <Button primary type="submit">
           Add your score
-        </button>
+        </Button>
       </form>
     </div>
   );

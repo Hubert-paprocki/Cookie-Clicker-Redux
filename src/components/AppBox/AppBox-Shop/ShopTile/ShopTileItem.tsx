@@ -1,7 +1,7 @@
 // ShopTileItem.tsx
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { buyItem } from "../../../../app/slices/shopSlice";
+import { buyItem } from "../../../../app/slices/boostersSlice";
 import { subtractBoosterValue } from "../../../../app/slices/cookieSlice";
 import CookieImg from "../../../../images/1464300474.svg";
 interface ShopTileItemProps {
@@ -11,7 +11,7 @@ interface ShopTileItemProps {
 }
 
 function ShopTileItem({ name, desc, price }: ShopTileItemProps) {
-  const selectedItems = useAppSelector((state) => state.shop.selectedItems);
+  const selectedItems = useAppSelector((state) => state.boosters.selectedItems);
   const cookieValue = useAppSelector((state) => state.cookie.value);
   const dispatch = useAppDispatch();
   const purchased = useAppSelector((state) => selectedItems.includes(name));

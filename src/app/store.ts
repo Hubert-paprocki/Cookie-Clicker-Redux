@@ -1,13 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import cookieReducer from './slices/cookieSlice';
 import navigationReducer from './slices/navigationSlice'
-import shopReducer from './slices/shopSlice'
+import boostersReducer from './slices/boostersSlice'
 
 export const store = configureStore({
   reducer: {
     cookie: cookieReducer,
     navigation: navigationReducer,
-    shop:shopReducer
+    boosters:boostersReducer
   },
 });
 

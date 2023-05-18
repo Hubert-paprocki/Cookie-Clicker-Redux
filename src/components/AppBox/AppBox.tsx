@@ -17,7 +17,7 @@ function AppBox() {
         } ${slide === "scoreboard" && "-translate-x-[1024px]"}`}
       >
         <GameBox />
-        {<ScoreboardBox />}
+        <ScoreboardBox />
         <ShopBox />
       </div>
     </div>

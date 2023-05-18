@@ -15,7 +15,7 @@ const cookieSlice = createSlice({
       state.value++
     },
     subtractBoosterValue(state,action: PayloadAction<number>) {
-      state.value = state.value-action.payload
+     state.value -= action.payload;
     },
   },
 })

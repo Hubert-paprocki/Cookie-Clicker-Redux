@@ -1,17 +1,16 @@
-// shopSlice.ts
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-interface ShopState {
+interface BoostersState {
   selectedItems: string[];
 }
 
-const initialState: ShopState = {
+const initialState: BoostersState = {
   selectedItems: [],
 };
 
-const shopSlice = createSlice({
-  name: 'shop',
+const boostersSlice = createSlice({
+  name: 'boosters',
   initialState,
   reducers: {
     buyItem: (state, action: PayloadAction<string>) => {
@@ -20,5 +19,5 @@ const shopSlice = createSlice({
   },
 });
 
-export const { buyItem } = shopSlice.actions;
-export default shopSlice.reducer;
+export const { buyItem } = boostersSlice.actions;
+export default boostersSlice.reducer;
