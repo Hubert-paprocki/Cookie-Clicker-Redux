@@ -3,7 +3,7 @@ import CookieBtn from "../../../images/1464300474.svg";
 import { useAppDispatch } from "../../../app/hooks";
 import { increment } from "../../../app/slices/cookieSlice";
 
-function CookieClicker() {
+function CookieClicker(): JSX.Element {
   const dispatch = useAppDispatch();
 
   const handleClick = () => {

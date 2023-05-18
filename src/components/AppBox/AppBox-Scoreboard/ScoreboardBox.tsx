@@ -3,7 +3,7 @@ import ScoreboardList from "./Scoreboard/ScoreboardList";
 import ScoreboardForm from "./Scoreboard/ScoreboardForm";
 import { useAppSelector } from "../../../app/hooks";
 
-function ScoreboardBox() {
+function ScoreboardBox(): JSX.Element {
   const slide = useAppSelector((state) => state.navigation.value);
   const [shouldRender, setShouldRender] = useState(false);
 

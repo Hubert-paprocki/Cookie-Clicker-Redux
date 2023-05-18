@@ -2,7 +2,7 @@ import React from "react";
 import CookieClicker from "./CookieClicker";
 import UserStatsBox from "./UserStatsBox/UserStatsBox";
 
-function GameBox() {
+function GameBox(): JSX.Element {
   return (
     <div className="flex flex-col w-[1024px]">
       <CookieClicker /> <UserStatsBox />

@@ -1,38 +1,37 @@
-// boosterSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   boosters: [
     {
-      id: 1,
+      id: 0,
       name: 'Granny Hands',
       desc: 'Earns two cookies with one click',
       price: 40,
       isActive: false,
     },
     {
-      id: 2,
+      id: 1,
       name: 'One Worker',
       desc: 'Makes one cookie per 2s',
       price: 50,
       isActive: false,
     },
     {
-      id: 3,
+      id: 2,
       name: 'Two Workers',
       desc: 'Makes one cookie per 1s',
       price: 100,
       isActive: false,
     },
     {
-      id: 4,
+      id: 3,
       name: 'Worker Squad',
       desc: 'Makes two cookies per 1s',
       price: 150,
       isActive: false,
     },
     {
-      id: 5,
+      id: 4,
       name: 'Cookie Factory',
       desc: 'Makes ten cookies per 1s',
       price: 250,

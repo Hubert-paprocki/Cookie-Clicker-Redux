@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppSelector } from "../../../../app/hooks";
 
-function UsersActiveBooster() {
+function UsersActiveBooster(): JSX.Element {
   const selectedItems = useAppSelector((state) =>
     state.boosters.boosters.filter((booster) => booster.isActive)
   );

@@ -9,7 +9,7 @@ interface Score {
   score: number;
 }
 
-function ScoreboardList() {
+function ScoreboardList(): JSX.Element {
   const [scoreList, setScoreList] = useState<Score[]>([]);
   const scoresRef = collection(firestore, "scores");
 
@@ -27,7 +27,6 @@ function ScoreboardList() {
         });
 
         newData.sort((a, b) => b.score - a.score); // Sort by highest score
-
         setScoreList(newData.slice(0, 10)); // Get top 10 scores
       }
     );

@@ -24,7 +24,7 @@ const navigationList: ListedNavigation[] = [
   },
 ];
 
-function NavigationList() {
+function NavigationList(): JSX.Element {
   const renderedNavigationList = navigationList.map((navigation) => {
     return (
       <NavigationItem

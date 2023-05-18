@@ -4,7 +4,7 @@ import bg from "./images/CookieBg.jpg";
 import Appbox from "./components/AppBox/AppBox";
 import Tittle from "./components/Title";
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="bg-stone-800 font-Braah uppercase tracking-wider text-xl">
       <div className="min-h-screen relative flex flex-col justify-center items-center pt-10">

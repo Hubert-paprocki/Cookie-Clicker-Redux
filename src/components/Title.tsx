@@ -1,6 +1,6 @@
 import React from "react";
 
-function Title() {
+function Title(): JSX.Element {
   return (
     <h1 className=" z-10 text-7xl pb-5 text-white relative hover:animate-pulse2 duration-700 ">
       Cookie Clicker

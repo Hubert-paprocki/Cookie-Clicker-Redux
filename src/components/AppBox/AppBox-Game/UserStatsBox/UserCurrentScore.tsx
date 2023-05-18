@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppSelector } from "../../../../app/hooks";
-function Score() {
+function Score(): JSX.Element {
   const cookieValue = useAppSelector((state) => state.cookie.value);
   return (
     <div>

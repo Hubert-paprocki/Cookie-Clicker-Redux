@@ -5,9 +5,9 @@ import ShopBox from "./AppBox-Shop/ShopBox";
 import { useAppSelector } from "../../app/hooks";
 import ScoreboardBox from "./AppBox-Scoreboard/ScoreboardBox";
 
-function AppBox() {
+function AppBox(): JSX.Element {
   const slide = useAppSelector((state) => state.navigation.value);
-  console.log(slide);
+
   return (
     <div className="w-[1024px]  bg-stone-800 rounded-lg overflow-hidden">
       <NavigationList />

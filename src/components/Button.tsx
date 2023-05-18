@@ -7,13 +7,13 @@ interface ButtonProps {
   readonly menu?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
+function Button({
   children,
   type,
   onClick,
   primary,
   menu,
-}) => {
+}: ButtonProps): JSX.Element {
   let classes;
   if (primary) {
     classes =
@@ -28,6 +28,6 @@ const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
+}
 
 export default Button;

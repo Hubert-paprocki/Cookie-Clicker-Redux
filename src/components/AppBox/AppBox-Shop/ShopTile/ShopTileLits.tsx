@@ -3,7 +3,7 @@ import React from "react";
 import ShopTileItem from "./ShopTileItem";
 import { useAppSelector } from "../../../../app/hooks";
 
-function ShopTileList() {
+function ShopTileList(): JSX.Element {
   const boosters = useAppSelector((state) => state.boosters.boosters);
   const renderedShopTileList = boosters.map((booster: any) => {
     return (

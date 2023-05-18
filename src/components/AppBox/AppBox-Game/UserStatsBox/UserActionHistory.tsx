@@ -1,6 +1,6 @@
 import React from "react";
 
-function UsersActionHistory() {
+function UsersActionHistory(): JSX.Element {
   return (
     <div>
       <h2>— History —</h2>
