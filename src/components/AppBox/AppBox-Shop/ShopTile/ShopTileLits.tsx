@@ -1,54 +1,18 @@
+// ShopTileList.tsx
 import React from "react";
 import ShopTileItem from "./ShopTileItem";
-
-interface ListedShopTile {
-  id: number;
-  name: string;
-  desc: string;
-  price: number;
-}
-
-const shopTileList: ListedShopTile[] = [
-  {
-    id: 1,
-    name: `Granny Hands`,
-    desc: `Earns two cookies with one click`,
-    price: 40,
-  },
-  {
-    id: 2,
-    name: `One Worker`,
-    desc: `makes one cookie per 2s`,
-    price: 50,
-  },
-  {
-    id: 3,
-    name: `Two Workers`,
-    desc: `makes one cookie per 1s`,
-    price: 100,
-  },
-  {
-    id: 4,
-    name: `Worker Squad`,
-    desc: `makes two cookie per 1s`,
-    price: 150,
-  },
-  {
-    id: 5,
-    name: `Cookie Factory`,
-    desc: `makes ten cookie per 1s`,
-    price: 250,
-  },
-];
+import { useAppSelector } from "../../../../app/hooks";
 
 function ShopTileList() {
-  const renderedShopTileList = shopTileList.map((shopTile) => {
+  const boosters = useAppSelector((state) => state.boosters.boosters);
+  const renderedShopTileList = boosters.map((booster: any) => {
     return (
       <ShopTileItem
-        key={shopTile.id}
-        name={shopTile.name}
-        desc={shopTile.desc}
-        price={shopTile.price}
+        key={booster.id}
+        id={booster.id}
+        name={booster.name}
+        desc={booster.desc}
+        price={booster.price}
       />
     );
   });

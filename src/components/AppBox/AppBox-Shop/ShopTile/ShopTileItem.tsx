@@ -1,29 +1,28 @@
 // ShopTileItem.tsx
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { buyItem } from "../../../../app/slices/boostersSlice";
+import { buyBooster } from "../../../../app/slices/boostersSlice";
 import { subtractBoosterValue } from "../../../../app/slices/cookieSlice";
 import CookieImg from "../../../../images/1464300474.svg";
 interface ShopTileItemProps {
   name: string;
   desc: string;
   price: number;
+  id: number;
 }
 
-function ShopTileItem({ name, desc, price }: ShopTileItemProps) {
-  const selectedItems = useAppSelector((state) => state.boosters.selectedItems);
+function ShopTileItem({ name, desc, price, id }: ShopTileItemProps) {
   const cookieValue = useAppSelector((state) => state.cookie.value);
   const dispatch = useAppDispatch();
-  const purchased = useAppSelector((state) => selectedItems.includes(name));
 
   const handleBuyItem = () => {
     if (cookieValue >= price) {
-      dispatch(buyItem(name));
+      dispatch(buyBooster(id));
       dispatch(subtractBoosterValue(price));
     }
   };
 
-  const isDisabled = purchased;
+  const isDisabled = false;
 
   return (
     <div className="p-5 first:rounded-bl-lg first:rounded-tl-lg last:rounded-br-lg last:rounded-tr-lg duration-200 text-stone-300 rounded-lg bg-yellow-800 bg-opacity-20 flex flex-col  justify-center gap-5 grow group ">
