@@ -1,13 +1,16 @@
 import React from "react";
 import CookieBtn from "../../../images/1464300474.svg";
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { increment } from "../../../app/slices/cookieSlice";
 
 function CookieClicker(): JSX.Element {
   const dispatch = useAppDispatch();
+  const grannyHandsIsActive = useAppSelector(
+    (state) => state.boosters.boosters[0].isActive
+  );
 
   const handleClick = () => {
-    dispatch(increment());
+    dispatch(increment({ grannyHandsIsActive }));
   };
 
   return (

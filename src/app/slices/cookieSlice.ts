@@ -1,24 +1,36 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { buy } from './actions';
 
 interface CookieState {
-  value: number
+  value: number;
 }
 
-const initialState = { value: 0 } as CookieState
+interface IncrementPayload {
+  grannyHandsIsActive: boolean;
+}
+
+const initialState: CookieState = { value: 0 };
 
 const cookieSlice = createSlice({
   name: 'cookie',
   initialState,
   reducers: {
-    increment(state) {
-      state.value++
-    },
-    subtractBoosterValue(state,action: PayloadAction<number>) {
-     state.value -= action.payload;
+    increment: (state, action: PayloadAction<IncrementPayload>) => {
+      const { grannyHandsIsActive } = action.payload;
+
+      if (grannyHandsIsActive) {
+        state.value += 2;
+      } else {
+        state.value++;
+      }
     },
   },
-})
+  extraReducers(builder) {
+    builder.addCase(buy, (state, action: PayloadAction<{ id: number; price: number }>) => {
+      state.value -= action.payload.price;
+    });
+  },
+});
 
-export const { increment,subtractBoosterValue } = cookieSlice.actions
-export default cookieSlice.reducer
+export const { increment } = cookieSlice.actions;
+export default cookieSlice.reducer;

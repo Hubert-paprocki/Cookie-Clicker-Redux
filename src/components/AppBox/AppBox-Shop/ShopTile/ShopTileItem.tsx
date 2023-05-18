@@ -1,8 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { buyBooster } from "../../../../app/slices/boostersSlice";
-import { subtractBoosterValue } from "../../../../app/slices/cookieSlice";
 import CookieImg from "../../../../images/1464300474.svg";
+import { buy } from "../../../../app/slices/actions";
 
 interface ShopTileItemProps {
   name: string;
@@ -17,16 +16,15 @@ function ShopTileItem({
   price,
   id,
 }: ShopTileItemProps): JSX.Element {
+  const dispatch = useAppDispatch();
   const cookieValue = useAppSelector((state) => state.cookie.value);
   const isBought = useAppSelector(
     (state) => state.boosters.boosters[id].isActive
   );
-  const dispatch = useAppDispatch();
-  console.log(id);
+
   const handleBuyItem = () => {
     if (cookieValue >= price && !isBought) {
-      dispatch(buyBooster(id));
-      dispatch(subtractBoosterValue(price));
+      dispatch(buy({ id, price }));
     }
   };
 
