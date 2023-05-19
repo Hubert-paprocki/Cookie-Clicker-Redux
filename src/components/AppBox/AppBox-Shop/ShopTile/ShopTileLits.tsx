@@ -18,7 +18,7 @@ function ShopTileList(): JSX.Element {
     );
   });
   return (
-    <div className="flex flex-wrap  text-2xl gap-3 h-full mx-4 pb-4">
+    <div className="flex flex-wrap text-2xl gap-3 h-full mx-4 pb-4">
       {renderedShopTileList}
     </div>
   );

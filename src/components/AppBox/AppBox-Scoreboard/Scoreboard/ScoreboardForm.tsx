@@ -31,25 +31,23 @@ function ScoreboardForm(): JSX.Element {
   };
 
   return (
-    <div>
-      <form
-        onSubmit={handleSubmit}
-        className="m-4 flex flex-col gap-4 items-center justify-center"
-      >
-        <div className="">
-          <label htmlFor="">Your name:</label>
-          <input
-            className="bg-transparent border-2 border-yellow-800 border-opacity-20 rounded-md mx-2 px-2 py-0.5 w-36"
-            type="text"
-            ref={userNameRef}
-            placeholder="Anonymous"
-          />
-        </div>
-        <Button primary type="submit">
-          Add your score
-        </Button>
-      </form>
-    </div>
+    <form
+      onSubmit={handleSubmit}
+      className="m-4 flex flex-col gap-4 items-center justify-center"
+    >
+      <div className="">
+        <label htmlFor="">Your name:</label>
+        <input
+          className="bg-transparent border-2 border-yellow-800 border-opacity-20 rounded-md mx-2 px-2 py-0.5 w-36"
+          type="text"
+          ref={userNameRef}
+          placeholder="Anonymous"
+        />
+      </div>
+      <Button primary type="submit">
+        Add your score
+      </Button>
+    </form>
   );
 }
 

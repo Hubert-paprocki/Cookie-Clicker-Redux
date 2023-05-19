@@ -9,12 +9,16 @@ function AppBox(): JSX.Element {
   const slide = useAppSelector((state) => state.navigation.value);
 
   return (
-    <div className="w-[1024px]  bg-stone-800 rounded-lg overflow-hidden">
+    <div className="w-full min-[1024px]:w-[1024px]  bg-stone-800 rounded-none  overflow-hidden min-[1024px]:rounded-lg">
       <NavigationList />
       <div
-        className={`flex w-[3072px]  duration-300 ${
-          slide === "shop" && "-translate-x-[2048px]"
-        } ${slide === "scoreboard" && "-translate-x-[1024px]"}`}
+        className={`flex w-[300%] min-[1024px]:w-[3072px]  duration-300 ${
+          slide === "shop" &&
+          " -translate-x-[66.666666666666%] min-[1024px]:-translate-x-[2048px]"
+        } ${
+          slide === "scoreboard" &&
+          "-translate-x-[33.3333333333333%] min-[1024px]:-translate-x-[1024px]"
+        }`}
       >
         <GameBox />
         <ScoreboardBox />

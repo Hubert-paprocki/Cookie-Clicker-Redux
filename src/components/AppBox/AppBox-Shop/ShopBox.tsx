@@ -1,9 +1,8 @@
-import React from "react";
 import ShopTileList from "./ShopTile/ShopTileLits";
 
 function ShopBox(): JSX.Element {
   return (
-    <div className=" w-[1024px]">
+    <div className=" min-[1024px]:w-[1024px] w-full">
       <ShopTileList />
     </div>
   );

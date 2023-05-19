@@ -13,7 +13,7 @@ function App(): JSX.Element {
           className="absolute inset-0 opacity-30 z-0 "
           style={{ backgroundImage: `url(${bg})` }}
         ></div>
-        <div className="relative text-white flex justify-center items-center z-10">
+        <div className="relative text-white flex justify-center items-center z-10 w-full">
           <Appbox />
         </div>
       </div>
