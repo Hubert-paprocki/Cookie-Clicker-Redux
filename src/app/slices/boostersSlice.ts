@@ -7,7 +7,7 @@ const initialState = {
       id: 0,
       name: 'Granny Hands',
       desc: 'Earns two cookies with one click',
-      price: 1,
+      price: 40,
       isActive: false,
     },
     {
@@ -15,7 +15,7 @@ const initialState = {
       name: 'One Worker',
       desc: 'Makes one cookie per 2s',
       time:2000,
-      price: 1,
+      price: 50,
       isActive: false,
     },
     {
