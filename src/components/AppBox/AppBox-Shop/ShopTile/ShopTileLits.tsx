@@ -13,6 +13,7 @@ function ShopTileList(): JSX.Element {
         name={booster.name}
         desc={booster.desc}
         price={booster.price}
+        time={booster.time}
       />
     );
   });

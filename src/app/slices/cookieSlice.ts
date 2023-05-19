@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, Dispatch } from '@reduxjs/toolkit';
 import { buy } from './actions';
 
 interface CookieState {
@@ -17,12 +17,14 @@ const cookieSlice = createSlice({
   reducers: {
     increment: (state, action: PayloadAction<IncrementPayload>) => {
       const { grannyHandsIsActive } = action.payload;
-
       if (grannyHandsIsActive) {
         state.value += 2;
       } else {
         state.value++;
       }
+    },
+    incrementByOne: (state) => {
+      state.value++;
     },
   },
   extraReducers(builder) {
@@ -31,6 +33,12 @@ const cookieSlice = createSlice({
     });
   },
 });
+
+export const incrementValueInfinitely = (interval: number) => (dispatch: Dispatch) => {
+  setInterval(() => {
+    dispatch(cookieSlice.actions.incrementByOne());
+  }, interval);
+};
 
 export const { increment } = cookieSlice.actions;
 export default cookieSlice.reducer;

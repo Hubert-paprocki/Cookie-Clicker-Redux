@@ -2,12 +2,14 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import CookieImg from "../../../../images/1464300474.svg";
 import { buy } from "../../../../app/slices/actions";
+import { incrementValueInfinitely } from "../../../../app/slices/cookieSlice";
 
 interface ShopTileItemProps {
   name: string;
   desc: string;
   price: number;
   id: number;
+  time: number;
 }
 
 function ShopTileItem({
@@ -15,6 +17,7 @@ function ShopTileItem({
   desc,
   price,
   id,
+  time,
 }: ShopTileItemProps): JSX.Element {
   const dispatch = useAppDispatch();
   const cookieValue = useAppSelector((state) => state.cookie.value);
@@ -25,6 +28,9 @@ function ShopTileItem({
   const handleBuyItem = () => {
     if (cookieValue >= price && !isBought) {
       dispatch(buy({ id, price }));
+      if (time) {
+        dispatch(incrementValueInfinitely(time));
+      }
     }
   };
 
