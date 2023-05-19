@@ -17,7 +17,7 @@ function AppBox(): JSX.Element {
           " -translate-x-[66.666666666666%] min-[1024px]:-translate-x-[2048px]"
         } ${
           slide === "scoreboard" &&
-          "-translate-x-[33.3333333333333%] min-[1024px]:-translate-x-[1024px]"
+          "-translate-x-[33.3333333333333%] min-[1024px]:-translate-x-[1024px] "
         }`}
       >
         <GameBox />
