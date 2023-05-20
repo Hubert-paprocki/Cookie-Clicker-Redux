@@ -8,8 +8,8 @@ function Footer(): JSX.Element {
       <p className="w-full max-w-xl  md:pr-12 md:w-1/2 pt-5 border-b-2 border-neutral-800 md:border-none pb-8 md:pb-0  font-norma items">
         Cookie Clicker is a popular incremental game where the goal is to
         accumulate as many cookies as possible by clicking on a giant cookie on
-        the screen. As you progress, you can unlock upgrades and other items to
-        increase your cookie production and automate the process of clicking.
+        the screen. As you progress, you can unlock upgrades to increase your
+        cookie production and automate the process of clicking.
       </p>
       <div className="w-full max-w-xl  border-l-none border-neutral-800 pl-0 md:pl-12 md:w-1/2 md:border-l-2  pt-0 md:pt-5 ">
         <p className="leading-relaxed">
