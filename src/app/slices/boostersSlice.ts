@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { buy } from './actions';
+import { buyBooster } from './actions';
 
 const initialState = {
   boosters: [
@@ -58,7 +58,7 @@ const boosterSlice = createSlice({
     },
   },
   extraReducers(builder) {
-    builder.addCase(buy, (state, action: PayloadAction<{ id: number; price: number }>) => {
+    builder.addCase(buyBooster, (state, action: PayloadAction<{ id: number; price: number }>) => {
       const boosterId = action.payload.id;
       const booster = state.boosters.find((b) => b.id === boosterId);
       if (booster) {

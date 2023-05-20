@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        "long-slide": "cubic-bezier(1, 0, 0, 1)",
+      },
       fontFamily: {
         Braah: ["Darumadrop One", "cursive"],
       },

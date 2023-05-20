@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import CookieImg from "../../../../images/1464300474.svg";
-import { buy } from "../../../../app/slices/actions";
+import { buyBooster } from "../../../../app/slices/actions";
 import { incrementValueInfinitely } from "../../../../app/slices/cookieSlice";
 
 interface ShopTileItemProps {
@@ -27,7 +27,7 @@ function ShopTileItem({
 
   const handleBuyItem = () => {
     if (cookieValue >= price && !isBought) {
-      dispatch(buy({ id, price }));
+      dispatch(buyBooster({ id, price, name }));
       if (time) {
         dispatch(incrementValueInfinitely(time));
       }

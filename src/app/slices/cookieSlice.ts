@@ -1,15 +1,31 @@
 import { createSlice, PayloadAction, Dispatch } from '@reduxjs/toolkit';
-import { buy } from './actions';
+import { buyBooster } from './actions';
 
 interface CookieState {
   value: number;
+  history: string[];
 }
 
 interface IncrementPayload {
   grannyHandsIsActive: boolean;
 }
 
-const initialState: CookieState = { value: 0 };
+const MAX_HISTORY_LENGTH = 3;
+
+const initialState: CookieState = { value: 0, history: [] };
+
+const setHistory = (state: CookieState, message: string) => {
+  state.history.push(message);
+  if (state.history.length > MAX_HISTORY_LENGTH) {
+    state.history.shift();
+  }
+};
+
+export const incrementValueInfinitely = (interval: number) => (dispatch: Dispatch) => {
+  setInterval(() => {
+    dispatch(cookieSlice.actions.increment({ grannyHandsIsActive: false }));
+  }, interval);
+};
 
 const cookieSlice = createSlice({
   name: 'cookie',
@@ -17,28 +33,20 @@ const cookieSlice = createSlice({
   reducers: {
     increment: (state, action: PayloadAction<IncrementPayload>) => {
       const { grannyHandsIsActive } = action.payload;
-      if (grannyHandsIsActive) {
-        state.value += 2;
-      } else {
-        state.value++;
-      }
-    },
-    incrementByOne: (state) => {
-      state.value++;
+      const earnedCookies = grannyHandsIsActive ? 2 : 1;
+      state.value += earnedCookies;
+      setHistory(state, `You earned ${earnedCookies} cookie${earnedCookies > 1 ? 's' : ''} (${state.value})`);
     },
   },
   extraReducers(builder) {
-    builder.addCase(buy, (state, action: PayloadAction<{ id: number; price: number }>) => {
+    builder.addCase(buyBooster, (state, action: PayloadAction<{ id: number; price: number; name: string }>) => {
       state.value -= action.payload.price;
+      setHistory(state, `You bought ${action.payload.name} for ${action.payload.price} cookie`);
     });
   },
 });
 
-export const incrementValueInfinitely = (interval: number) => (dispatch: Dispatch) => {
-  setInterval(() => {
-    dispatch(cookieSlice.actions.incrementByOne());
-  }, interval);
-};
+
 
 export const { increment } = cookieSlice.actions;
 export default cookieSlice.reducer;

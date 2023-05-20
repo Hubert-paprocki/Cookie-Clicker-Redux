@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
 
-export const buy = createAction<{ id: number; price: number }>('app/buy');
+export const buyBooster = createAction<{ id: number; price: number,name:string }>('app/buy');
 
 

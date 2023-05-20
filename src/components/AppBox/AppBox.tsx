@@ -12,12 +12,12 @@ function AppBox(): JSX.Element {
     <div className="w-full min-[1024px]:w-[1024px]  bg-stone-800 rounded-none  overflow-hidden min-[1024px]:rounded-lg">
       <NavigationList />
       <div
-        className={`flex w-[300%] min-[1024px]:w-[3072px]  duration-300 ${
+        className={`flex w-[300%] min-[1024px]:w-[3072px] duration-300 ease-long-slide ${
           slide === "shop" &&
-          " -translate-x-[66.666666666666%] min-[1024px]:-translate-x-[2048px]"
+          " -translate-x-[66.666666666666%] min-[1024px]:-translate-x-[2048px] "
         } ${
           slide === "scoreboard" &&
-          "-translate-x-[33.3333333333333%] min-[1024px]:-translate-x-[1024px] "
+          " -translate-x-[33.3333333333333%] min-[1024px]:-translate-x-[1024px] "
         }`}
       >
         <GameBox />
