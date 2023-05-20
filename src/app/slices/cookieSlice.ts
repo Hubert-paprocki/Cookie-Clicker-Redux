@@ -35,7 +35,7 @@ const cookieSlice = createSlice({
       const { grannyHandsIsActive } = action.payload;
       const earnedCookies = grannyHandsIsActive ? 2 : 1;
       state.value += earnedCookies;
-      setHistory(state, `You earned ${earnedCookies} cookie${earnedCookies > 1 ? 's' : ''} (${state.value})`);
+      setHistory(state, `You earned ${earnedCookies} cookie (${state.value})`);
     },
   },
   extraReducers(builder) {

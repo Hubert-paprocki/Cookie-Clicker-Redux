@@ -9,7 +9,7 @@ interface SocialMediaItemProps {
 const SocialMediaItem = ({ img, link }: SocialMediaItemProps): JSX.Element => {
   return (
     <a
-      className="hover:scale-125 transition duration-300 cursor-pointer text-4xl hover:text-purple-500"
+      className="hover:scale-125 transition duration-300 cursor-pointer text-4xl hover:text-purple-700"
       href={link}
     >
       {img}

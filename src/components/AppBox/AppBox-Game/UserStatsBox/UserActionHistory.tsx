@@ -22,10 +22,10 @@ function UsersActionHistory(): JSX.Element {
         {history.map((item, index) => {
           const [part1, part2] = splitItemString(item);
           return (
-            <li key={index} className="flex items-center justify-center ">
+            <li key={index} className="flex items-center justify-start ">
               <p className="my-1">{part1}</p>
               <img src={CookieSvg} alt="cookie" className="w-7 mx-1" />
-              <p className="my-1">{part2}</p>
+              <p className="my-1 ml-6">{part2}</p>
             </li>
           );
         })}

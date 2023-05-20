@@ -14,12 +14,12 @@ function Footer(): JSX.Element {
       <div className="w-full max-w-xl  border-l-none border-neutral-800 pl-0 md:pl-12 md:w-1/2 md:border-l-2  pt-0 md:pt-5 ">
         <p className="leading-relaxed">
           This website was made by
-          <span className="relative">
+          <span className="relative whitespace-nowrap">
             <span
               className="block absolute -inset-1 -skew-y-2 translate-y-[0.11rem] bg-purple-800 px-2 mx-2 shadow-md"
               aria-hidden="true"
             ></span>
-            <span className="relative text-white mx-4">Hubert Paprocki</span>
+            <span className="relative text-white mx-4 ">Hubert Paprocki</span>
           </span>
           . All rights reserved. Copyright © {currentYear}
         </p>
