@@ -28,8 +28,8 @@ function ShopTileItem({ name, desc, price, id, time }: Booster): JSX.Element {
   return (
     <div className="p-2 sm:p-5 first:rounded-bl-lg first:rounded-tl-lg last:rounded-br-lg last:rounded-tr-lg duration-200 text-stone-300 rounded-lg bg-yellow-800 bg-opacity-20 flex flex-col justify-evenly sm:justify-center gap-2 min-[500px]:gap-5 grow group  w-full sm:w-auto ">
       <div className="relative bg-orange-200 text-gray-700 p-3 sm:p-4 rounded-lg flex flex-col items-center justify-center text-center sm:h-32 overflow-hidden">
-        <p>{name}</p>
-        <p className="absolute bottom-0 w-full bg-orange-100 transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0">
+        <p className="cursor-default">{name}</p>
+        <p className="absolute bottom-0 w-full bg-orange-100 transition-all duration-500 ease-in-out transform translate-y-full group-hover:translate-y-0 cursor-default">
           {desc}
         </p>
       </div>
@@ -43,6 +43,7 @@ function ShopTileItem({ name, desc, price, id, time }: Booster): JSX.Element {
         }`}
         onClick={handleBuyItem}
         disabled={isBought}
+        style={{ WebkitTapHighlightColor: "transparent" }}
       >
         {isBought ? "Item purchased" : `Buy for ${price}`}
         <img src={CookieImg} alt="cookie" className="h-7 pl-1.5" />

@@ -14,11 +14,12 @@ function CookieClicker(): JSX.Element {
   };
 
   return (
-    <div className="flex items-center justify-center p-10">
+    <div className="flex items-center justify-center p-2 xs:p-5 sm:p-10">
       <button
-        className="rounded-full active:scale-[108%] active:duration-75 hover:scale-[102.5%] duration-200 opacity-80"
+        className="rounded-full active:scale-[108%] active:duration-75 hover:scale-[102.5%] duration-200 opacity-80 w-2/3 sm:w-auto"
         onClick={handleClick}
         onContextMenu={(e) => e.preventDefault()}
+        style={{ WebkitTapHighlightColor: "transparent" }}
       >
         <img
           src={CookieBtn}

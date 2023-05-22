@@ -24,7 +24,12 @@ function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={classes}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={classes}
+      style={{ WebkitTapHighlightColor: "transparent" }}
+    >
       {children}
     </button>
   );
