@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import { firestore } from "../../../../firebase";
 import ScoreboardItem from "./ScoreboardItem";
@@ -26,8 +26,8 @@ function ScoreboardList(): JSX.Element {
           };
         });
 
-        newData.sort((a, b) => b.score - a.score); // Sort by highest score
-        setScoreList(newData.slice(0, 10)); // Get top 10 scores
+        newData.sort((a, b) => b.score - a.score);
+        setScoreList(newData.slice(0, 10));
       }
     );
 
@@ -43,7 +43,7 @@ function ScoreboardList(): JSX.Element {
   ));
 
   return (
-    <ol className="flex flex-col gap-3 items-center text-2xl m-4 max-h-[500px] overflow-y-scroll p-4 w-full">
+    <ol className="flex flex-col gap-3 items-center text-2xl m-4 max-h-[500px] overflow-y-scroll p-4 ">
       {renderedScoreboardList}
     </ol>
   );

@@ -33,7 +33,7 @@ function ScoreboardForm(): JSX.Element {
   return (
     <form
       onSubmit={handleSubmit}
-      className="m-4 flex flex-col gap-4 items-center justify-center"
+      className=" flex flex-col gap-4 items-center justify-center "
     >
       <div className="">
         <label htmlFor="">Your name:</label>
