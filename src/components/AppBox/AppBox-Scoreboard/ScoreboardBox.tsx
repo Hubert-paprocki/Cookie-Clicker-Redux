@@ -19,7 +19,7 @@ function ScoreboardBox(): JSX.Element {
   }, [slide]);
 
   return (
-    <div className="w-full min-[1024px]:w-[1024px] flex flex-col justify-evenly">
+    <div className="w-full min-[1024px]:w-[1024px] flex flex-col ">
       {shouldRender && (
         <>
           <ScoreboardList />
