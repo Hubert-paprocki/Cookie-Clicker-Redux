@@ -1,7 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { buyBooster } from './actions';
 
-const initialState = {
+export interface Booster {
+  id: number;
+  name: string;
+  desc: string;
+  price: number;
+  time?: number;
+  isActive: boolean;
+  cookieVal: number;
+}
+
+interface BoostersState {
+  boosters: Booster[];
+}
+
+const initialState: BoostersState = {
   boosters: [
     {
       id: 0,
@@ -9,38 +23,43 @@ const initialState = {
       desc: 'Earns two cookies with one click',
       price: 40,
       isActive: false,
+      cookieVal: 2
     },
     {
       id: 1,
       name: 'One Worker',
       desc: 'Makes one cookie per 2s',
-      time:2000,
+      time: 2000,
       price: 50,
       isActive: false,
+      cookieVal: 1
     },
     {
       id: 2,
       name: 'Two Workers',
       desc: 'Makes one cookie per 1s',
-      time:1000,
+      time: 1000,
       price: 100,
       isActive: false,
+      cookieVal: 1
     },
     {
       id: 3,
       name: 'Worker Squad',
       desc: 'Makes two cookies per 1s',
-      time:500,
+      time: 500,
       price: 150,
       isActive: false,
+      cookieVal: 2
     },
     {
       id: 4,
       name: 'Cookie Factory',
       desc: 'Makes ten cookies per 1s',
-      time:100,
+      time: 100,
       price: 250,
       isActive: false,
+      cookieVal: 10
     },
   ],
 };
