@@ -3,7 +3,7 @@ import { useAppSelector } from "../../../../app/hooks";
 
 function UsersActiveBooster(): JSX.Element {
   const selectedItems = useAppSelector((state) =>
-    state.boosters.boosters.filter((booster) => booster.isActive)
+    state.shop.boosters.filter((booster) => booster.isActive)
   );
 
   return (

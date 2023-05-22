@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import CookieImg from "../../../../images/1464300474.svg";
 import { buyBooster } from "../../../../app/slices/actions";
 import { incrementValueInfinitely } from "../../../../app/slices/cookieSlice";
-import { Booster } from "../../../../app/slices/boostersSlice";
+import { Booster, setFlashRed } from "../../../../app/slices/shopSlice";
 
 function ShopTileItem({ name, desc, price, id, time }: Booster): JSX.Element {
   const dispatch = useAppDispatch();
   const cookieValue = useAppSelector((state) => state.cookie.value);
-  const isBought = useAppSelector(
-    (state) => state.boosters.boosters[id].isActive
-  );
-
-  const [flashRed, setFlashRed] = useState(false);
+  const isBought = useAppSelector((state) => state.shop.boosters[id].isActive);
+  const flashRed = useAppSelector((state) => state.shop.boosters[id].flashRed);
 
   const handleBuyItem = () => {
     if (cookieValue >= price && !isBought) {
@@ -21,9 +18,9 @@ function ShopTileItem({ name, desc, price, id, time }: Booster): JSX.Element {
         dispatch(incrementValueInfinitely(time));
       }
     } else if (cookieValue < price && !isBought) {
-      setFlashRed(true);
+      dispatch(setFlashRed({ id, value: true }));
       setTimeout(() => {
-        setFlashRed(false);
+        dispatch(setFlashRed({ id, value: false }));
       }, 500);
     }
   };

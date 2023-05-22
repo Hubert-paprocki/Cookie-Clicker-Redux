@@ -6,7 +6,7 @@ import { increment } from "../../../app/slices/cookieSlice";
 function CookieClicker(): JSX.Element {
   const dispatch = useAppDispatch();
   const grannyHandsIsActive = useAppSelector(
-    (state) => state.boosters.boosters[0].isActive
+    (state) => state.shop.boosters[0].isActive
   );
 
   const handleClick = () => {

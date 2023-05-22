@@ -1,10 +1,10 @@
 import React from "react";
 import ShopTileItem from "./ShopTileItem";
 import { useAppSelector } from "../../../../app/hooks";
-import { Booster } from "../../../../app/slices/boostersSlice";
+import { Booster } from "../../../../app/slices/shopSlice";
 
 function ShopTileList(): JSX.Element {
-  const boosters = useAppSelector((state) => state.boosters.boosters);
+  const boosters = useAppSelector((state) => state.shop.boosters);
   const renderedShopTileList = boosters.map((booster: Booster) => {
     return (
       <ShopTileItem
@@ -16,6 +16,7 @@ function ShopTileList(): JSX.Element {
         time={booster.time}
         cookieVal={booster.cookieVal}
         isActive={booster.isActive}
+        flashRed={booster.flashRed}
       />
     );
   });

@@ -9,6 +9,7 @@ export interface Booster {
   time?: number;
   isActive: boolean;
   cookieVal: number;
+  flashRed: boolean;
 }
 
 interface BoostersState {
@@ -23,7 +24,8 @@ const initialState: BoostersState = {
       desc: 'Earns two cookies with one click',
       price: 40,
       isActive: false,
-      cookieVal: 2
+      cookieVal: 2,
+      flashRed: false,
     },
     {
       id: 1,
@@ -32,7 +34,8 @@ const initialState: BoostersState = {
       time: 2000,
       price: 50,
       isActive: false,
-      cookieVal: 1
+      cookieVal: 1,
+      flashRed: false,
     },
     {
       id: 2,
@@ -41,7 +44,8 @@ const initialState: BoostersState = {
       time: 1000,
       price: 100,
       isActive: false,
-      cookieVal: 1
+      cookieVal: 1,
+      flashRed: false,
     },
     {
       id: 3,
@@ -50,7 +54,8 @@ const initialState: BoostersState = {
       time: 500,
       price: 150,
       isActive: false,
-      cookieVal: 2
+      cookieVal: 2,
+      flashRed: false,
     },
     {
       id: 4,
@@ -59,13 +64,14 @@ const initialState: BoostersState = {
       time: 100,
       price: 250,
       isActive: false,
-      cookieVal: 10
+      cookieVal: 10,
+      flashRed: false,
     },
   ],
 };
 
-const boosterSlice = createSlice({
-  name: 'booster',
+const shopSlice = createSlice({
+  name: 'shop',
   initialState,
   reducers: {
     activateBooster: (state, action: PayloadAction<number>) => {
@@ -73,6 +79,13 @@ const boosterSlice = createSlice({
       const booster = state.boosters.find((b) => b.id === boosterId);
       if (booster) {
         booster.isActive = true;
+      }
+    },
+    setFlashRed: (state, action: PayloadAction<{ id: number; value: boolean }>) => {
+      const { id, value } = action.payload;
+      const booster = state.boosters.find((b) => b.id === id);
+      if (booster) {
+        booster.flashRed = value;
       }
     },
   },
@@ -89,5 +102,5 @@ const boosterSlice = createSlice({
   },
 });
 
-export const { activateBooster } = boosterSlice.actions;
-export default boosterSlice.reducer;
+export const { activateBooster, setFlashRed } = shopSlice.actions;
+export default shopSlice.reducer;
