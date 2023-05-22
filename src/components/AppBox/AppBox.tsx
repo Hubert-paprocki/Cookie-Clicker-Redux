@@ -9,7 +9,7 @@ function AppBox(): JSX.Element {
   const slide = useAppSelector((state) => state.navigation.value);
 
   return (
-    <div className="w-full min-[1024px]:w-[1024px]  bg-stone-800 rounded-none  overflow-hidden min-[1024px]:rounded-lg">
+    <div className="w-full min-[1024px]:w-[1024px] bg-stone-800 rounded-none  overflow-hidden min-[1024px]:rounded-lg max-[500px]:min-h-screen ">
       <NavigationList />
       <div
         className={`flex w-[300%] min-[1024px]:w-[3072px] duration-300 ease-long-slide ${

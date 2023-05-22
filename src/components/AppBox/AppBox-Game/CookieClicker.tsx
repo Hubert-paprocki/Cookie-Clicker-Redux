@@ -16,13 +16,14 @@ function CookieClicker(): JSX.Element {
   return (
     <div className="flex items-center justify-center p-10">
       <button
-        className="rounded-full active:scale-[108%] active:duration-75 hover:scale-[102.5%] duration-200 opacity-80 "
+        className="rounded-full active:scale-[108%] active:duration-75 hover:scale-[102.5%] duration-200 opacity-80"
         onClick={handleClick}
+        onContextMenu={(e) => e.preventDefault()}
       >
         <img
           src={CookieBtn}
           alt="Cookie"
-          className="max-w-md"
+          className="w-full"
           draggable="false"
         />
       </button>
