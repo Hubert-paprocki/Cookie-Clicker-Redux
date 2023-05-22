@@ -3,21 +3,21 @@ import { collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
 import { firestore } from "../../../../firebase";
 import ScoreboardItem from "./ScoreboardItem";
 
-interface Score {
-  id: string;
-  username: string;
-  score: number;
+interface Scoreboard {
+  readonly id: string;
+  readonly username: string;
+  readonly score: number;
 }
 
 function ScoreboardList(): JSX.Element {
-  const [scoreList, setScoreList] = useState<Score[]>([]);
+  const [scoreList, setScoreList] = useState<Scoreboard[]>([]);
   const scoresRef = collection(firestore, "scores");
 
   useEffect(() => {
     const unsubscribe = onSnapshot(
       scoresRef,
       (querySnapshot: QuerySnapshot) => {
-        const newData: Score[] = querySnapshot.docs.map((doc) => {
+        const newData: Scoreboard[] = querySnapshot.docs.map((doc) => {
           const { username, score } = doc.data();
           return {
             id: doc.id,
