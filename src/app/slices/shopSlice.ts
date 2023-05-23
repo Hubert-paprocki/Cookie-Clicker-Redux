@@ -51,7 +51,7 @@ const initialState: BoostersState = {
       id: 3,
       name: 'Worker Squad',
       desc: 'Makes two cookies per 1s',
-      time: 500,
+      time: 1000,
       price: 150,
       isActive: false,
       cookieVal: 2,
@@ -60,9 +60,9 @@ const initialState: BoostersState = {
     {
       id: 4,
       name: 'Cookie Factory',
-      desc: 'Makes ten cookies per 1s',
-      time: 100,
-      price: 250,
+      desc: 'Makes ten cookies per 2s',
+      time: 2000,
+      price:1,
       isActive: false,
       cookieVal: 10,
       flashRed: false,
@@ -91,12 +91,10 @@ const shopSlice = createSlice({
   },
   extraReducers(builder) {
     builder.addCase(buyBooster, (state, action: PayloadAction<{ id: number; price: number }>) => {
-      const boosterId = action.payload.id;
-      const booster = state.boosters.find((b) => b.id === boosterId);
-      if (booster) {
-        if (!booster.isActive) {
-          booster.isActive = true;
-        }
+      const { id } = action.payload;
+      const booster = state.boosters.find((b) => b.id === id);
+      if (booster && !booster.isActive) {
+        booster.isActive = true;
       }
     });
   },

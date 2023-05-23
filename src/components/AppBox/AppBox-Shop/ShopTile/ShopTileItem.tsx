@@ -5,7 +5,14 @@ import { buyBooster } from "../../../../app/slices/actions";
 import { incrementValueInfinitely } from "../../../../app/slices/cookieSlice";
 import { Booster, setFlashRed } from "../../../../app/slices/shopSlice";
 
-function ShopTileItem({ name, desc, price, id, time }: Booster): JSX.Element {
+function ShopTileItem({
+  name,
+  desc,
+  price,
+  id,
+  time,
+  cookieVal,
+}: Booster): JSX.Element {
   const dispatch = useAppDispatch();
   const cookieValue = useAppSelector((state) => state.cookie.value);
   const isBought = useAppSelector((state) => state.shop.boosters[id].isActive);
@@ -15,7 +22,7 @@ function ShopTileItem({ name, desc, price, id, time }: Booster): JSX.Element {
     if (cookieValue >= price && !isBought) {
       dispatch(buyBooster({ id, price, name }));
       if (time) {
-        dispatch(incrementValueInfinitely(time));
+        dispatch(incrementValueInfinitely(time, cookieVal));
       }
     } else if (cookieValue < price && !isBought) {
       dispatch(setFlashRed({ id, value: true }));
