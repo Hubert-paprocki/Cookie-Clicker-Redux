@@ -1,38 +1,16 @@
-import { useEffect, useState } from "react";
-import { collection, onSnapshot, QuerySnapshot } from "firebase/firestore";
-import { firestore } from "../../../../firebase";
-import ScoreboardItem from "./ScoreboardItem";
+import React, { useEffect } from "react";
+import { useAppSelector, useAppDispatch } from "../../../../app/hooks";
 
-interface Scoreboard {
-  readonly id: string;
-  readonly username: string;
-  readonly score: number;
-}
+import ScoreboardItem from "./ScoreboardItem";
+import { fetchScoreList } from "../../../../app/slices/scoreboardSlice";
 
 function ScoreboardList(): JSX.Element {
-  const [scoreList, setScoreList] = useState<Scoreboard[]>([]);
-  const scoresRef = collection(firestore, "scores");
+  const scoreList = useAppSelector((state) => state.scoreboard.scoreList);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(
-      scoresRef,
-      (querySnapshot: QuerySnapshot) => {
-        const newData: Scoreboard[] = querySnapshot.docs.map((doc) => {
-          const { username, score } = doc.data();
-          return {
-            id: doc.id,
-            username,
-            score,
-          };
-        });
-
-        newData.sort((a, b) => b.score - a.score);
-        setScoreList(newData.slice(0, 10));
-      }
-    );
-
-    return () => unsubscribe();
-  }, []);
+    dispatch(fetchScoreList());
+  }, [dispatch]);
 
   const renderedScoreboardList = scoreList.map((scoreboard, index) => (
     <ScoreboardItem
@@ -43,7 +21,7 @@ function ScoreboardList(): JSX.Element {
   ));
 
   return (
-    <ol className="flex flex-col gap-3 items-center max-h-[500px] overflow-y-scroll ml-4 ">
+    <ol className="flex flex-col gap-3 items-center max-h-[500px] overflow-y-scroll ml-4">
       {renderedScoreboardList}
     </ol>
   );
