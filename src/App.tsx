@@ -6,7 +6,7 @@ import Tittle from "./components/Title";
 
 function App(): JSX.Element {
   return (
-    <div className="bg-stone-800 font-Braah uppercase tracking-wider text-md sm:text-xl md:text-2xl">
+    <div className="bg-stone-800 font-Braah uppercase tracking-wider text-sm xs:text-md md:text-xl lg:text-2xl">
       <div className="min-[500px]:min-h-screen relative flex flex-col min-[1024px]:justify-center items-center min-[500px]:pt-10">
         <Tittle />
         <div

@@ -38,8 +38,7 @@ const cookieSlice = createSlice({
       const earnedCookies = cookieVal || 0;
       state.value += earnedCookies;
       const intervalInSeconds = interval ? interval / 1000 : 0;
-      const timeUnit = intervalInSeconds > 1 ? 'seconds' : 'second';
-      setHistory(state, `Worker earned ${earnedCookies} cookie in ${intervalInSeconds} ${timeUnit} (${state.value})`);
+      setHistory(state, `Worker earned ${earnedCookies} cookie in ${intervalInSeconds}" (${state.value})`);
     },
   },
   extraReducers: (builder) => {

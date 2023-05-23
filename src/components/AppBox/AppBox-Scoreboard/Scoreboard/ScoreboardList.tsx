@@ -43,7 +43,7 @@ function ScoreboardList(): JSX.Element {
   ));
 
   return (
-    <ol className="flex flex-col gap-3 items-center m-4 max-h-[500px] overflow-y-scroll p-4 ">
+    <ol className="flex flex-col gap-3 items-center max-h-[500px] overflow-y-scroll ml-4 ">
       {renderedScoreboardList}
     </ol>
   );
