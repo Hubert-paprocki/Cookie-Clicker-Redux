@@ -1,0 +1,45 @@
+{
+  "lang":"en",
+  "name": "Cookie Clicker",
+  "description": "cookie clicker to popularna gra inkrementalna, w ktorej celem jest nabywanie jak najwiekszej ilosci ciasteczek poprzez klikanie w gigantyczne ciasteczko na ekranie. w miare postepu mozesz odblokowywac ulepszenia, ktore zwieksza produkcje ciasteczek oraz zautomatyzuja proces klikania.",
+  "upgrades": [
+    {"id":0,
+      "name": "babcine dlonie",
+      "description": "zarabia dwa ciasteczka jednym kliknieciem"
+    },
+    {"id":1,
+      "name": "jeden pracownik",
+      "description": "wytwarza jedno ciasteczko co 2 sekundy."
+    },
+    {"id":2,
+      "name": "dwoch pracownikow",
+      "description": "wytwarza jedno ciasteczko co 1 sekunde."
+    },
+    {"id":3,
+      "name": "zgrana zaloga",
+      "description": "wytwarza dwa ciasteczka co 1 sekunde."
+    },
+    {"id":4,
+      "name": "fabryka ciasteczek",
+      "description": "wytwarza dziesiec ciasteczek co 2 sekundy."
+    }
+  ],
+  "credits": {"part1":"ta strona zostala stworzona przez ","part2":". wszelkie prawa zastrzezone. prawa autorskie ©"},
+  "navigation":
+  {"earnCookies":"Zarob ciastka","scoreboard":"tablica wynikow","shop":"sklep"}
+,
+  "scoreboard":{
+    "name":"nazwa:","score":"wynik:"
+  },
+  "addToScoreboardForm":{
+    "yourName":"twoja nazwa:","inputPlaceholder":"Anonimowy","btnText":"dodaj wynik"
+  },
+  "userStats":{
+    "scoreName":"Twoj wynik:","history":"— HISTORIA —","activeBoosters":"— AKTYWNE WSPOMAGACZE —"
+  },
+    "shopBtn":{
+      "bought":"Przedmiot kupiony",
+      "notBought":"Kup za"
+    }
+  }
+

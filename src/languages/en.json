@@ -1,0 +1,44 @@
+{
+  "lang":"pl",
+  "name": "Cookie Clicker",
+  "description": "cookie clicker is a popular incremental game where the goal is to accumulate as many cookies as possible by clicking on a giant cookie on the screen. as you progress, you can unlock upgrades to increase your cookie production and automate the process of clicking.",
+  "upgrades": [
+    {"id":0,
+      "name": "granny hands",
+      "description": "earns two cookies with one click"
+    },
+    {"id":1,
+      "name": "one worker",
+      "description": "makes one cookie per 2s."
+    },
+    {"id":2,
+      "name": "two workers",
+      "description": "makes one cookie per 1s."
+    },
+    {"id":3,
+      "name": "worker squad",
+      "description": "makes two cookies per 1s."
+    },
+    {"id":4,
+      "name": "cookie factory",
+      "description": "makes ten cookies per 2s."
+    }
+  ],
+  "credits": {"part1":"this website was made by", "part2":"all rights reserved. copyright ©"},
+  "navigation":
+    {"earnCookies":"earn cookies","scoreboard":"scoreboard","shop":"shop"}
+  ,
+  "scoreboard":{
+    "name":"name:","score":"score:"
+  },
+  "addToScoreboardForm":{
+    "yourName":"Your name:","inputPlaceholder":"Anonymous","btnText":"Add your score"
+  },
+  "userStats":{
+    "scoreName":"Your Score:","history":"— HISTORY —","activeBoosters":"— ACTIVE BOOSTERS —"
+  },
+  "shopBtn":{
+    "bought":"item purchased",
+    "notBought":"Buy for"
+  }
+}

@@ -35,9 +35,9 @@ const cookieSlice = createSlice({
     },
     boosterIncrement: (state, action: PayloadAction<{ cookieVal: number; interval: number }>) => {
       const { cookieVal, interval } = action.payload;
-      const earnedCookies = cookieVal || 0;
+      const earnedCookies = cookieVal;
       state.value += earnedCookies;
-      const intervalInSeconds = interval ? interval / 1000 : 0;
+      const intervalInSeconds =  interval / 1000;
       setHistory(state, `Worker earned ${earnedCookies} cookie in ${intervalInSeconds}" (${state.value})`);
     },
   },

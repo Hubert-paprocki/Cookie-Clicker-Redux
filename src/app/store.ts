@@ -3,13 +3,15 @@ import cookieReducer from './slices/cookieSlice';
 import navigationReducer from './slices/navigationSlice';
 import shopReducer from './slices/shopSlice';
 import scoreboardReducer from './slices/scoreboardSlice';
+import languageReducer from './slices/languageSlice'
 
 export const store = configureStore({
   reducer: {
     cookie: cookieReducer,
     navigation: navigationReducer,
     shop: shopReducer,
-    scoreboard: scoreboardReducer
+    scoreboard: scoreboardReducer,
+    language: languageReducer
   },
 });
 

@@ -17,7 +17,9 @@ function ShopTileItem({
   const cookieValue = useAppSelector((state) => state.cookie.value);
   const isBought = useAppSelector((state) => state.shop.boosters[id].isActive);
   const flashRed = useAppSelector((state) => state.shop.boosters[id].flashRed);
-
+  const btnLanguage = useAppSelector(
+    (state) => state.language.selectedLanguage.shopBtn
+  );
   const handleBuyItem = () => {
     if (cookieValue >= price && !isBought) {
       dispatch(buyBooster({ id, price, name }));
@@ -41,7 +43,7 @@ function ShopTileItem({
         </p>
       </div>
       <button
-        className={`bg-green-400 bg-opacity-20 py-1 px-4 rounded-lg sm:rounded-full flex items-center justify-center ${
+        className={`bg-green-400 bg-opacity-20 py-1 px-4 rounded-lg sm:rounded-full flex items-center justify-center shadow-md shadow-neutral-800 ${
           isBought
             ? "opacity-50 "
             : `hover:bg-opacity-50 duration-200 hover:-translate-y-0.5 active:translate-y-0 active:duration-75 ${
@@ -52,7 +54,9 @@ function ShopTileItem({
         disabled={isBought}
         style={{ WebkitTapHighlightColor: "transparent" }}
       >
-        {isBought ? "Item purchased" : `Buy for ${price}`}
+        {isBought
+          ? `${btnLanguage.bought}`
+          : `${btnLanguage.notBought} ${price}`}
         <img src={CookieImg} alt="cookie" className="h-7 pl-1.5" />
       </button>
     </div>

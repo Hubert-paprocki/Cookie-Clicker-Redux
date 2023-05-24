@@ -69,7 +69,8 @@ const initialState: BoostersState = {
     },
   ],
 };
-
+//do not forget to change interface and edit booster state
+//(i will)
 const shopSlice = createSlice({
   name: 'shop',
   initialState,

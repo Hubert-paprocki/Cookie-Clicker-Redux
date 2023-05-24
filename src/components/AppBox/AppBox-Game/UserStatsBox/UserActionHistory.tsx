@@ -4,26 +4,30 @@ import CookieSvg from "../../../../images/1464300474.svg";
 
 function UsersActionHistory(): JSX.Element {
   const history = useAppSelector((state) => state.cookie.history);
+  const historyLanguage = useAppSelector(
+    (state) => state.language.selectedLanguage.userStats.history
+  );
 
   const splitItemString = (item: string) => {
     const index1 = item.indexOf("cookie");
     const index2 = item.indexOf("(");
-    if (index1 !== -1 && index2 !== -1) {
+
+    if (index1 !== -1) {
       const part1 = item.substring(0, index1);
-      const part2 = item.substring(index1 + "cookie".length, index2);
-      const part3 = item.substring(index2);
-      return [part1, part2, part3];
-    } else if (index1 !== -1) {
-      const part1 = item.substring(0, index1);
-      const part2 = item.substring(index1 + "cookie".length);
-      return [part1, part2];
+      const part2 =
+        index2 !== -1
+          ? item.substring(index1 + "cookie".length, index2)
+          : item.substring(index1 + "cookie".length);
+      const part3 = index2 !== -1 ? item.substring(index2) : undefined;
+      return [part1, part2, part3].filter(Boolean);
     }
+
     return [item];
   };
 
   return (
     <div className="grow sm:ml-2 ">
-      <h2>— History —</h2>
+      <h2>{historyLanguage}</h2>
       <ul>
         {history.map((item, index) => {
           const [part1, part2, part3] = splitItemString(item);

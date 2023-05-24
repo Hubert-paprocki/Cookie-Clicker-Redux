@@ -1,30 +1,32 @@
 import NavigationItem from "./NavigationItem";
-
+import { useAppSelector } from "../../../app/hooks";
 interface ListedNavigation {
   id: number;
   name: string;
   link: string;
 }
 
-const navigationList: ListedNavigation[] = [
-  {
-    id: 1,
-    name: `earn cookies`,
-    link: `game`,
-  },
-  {
-    id: 2,
-    name: `scoreboard`,
-    link: `scoreboard`,
-  },
-  {
-    id: 3,
-    name: `shop`,
-    link: `shop`,
-  },
-];
-
 function NavigationList(): JSX.Element {
+  const naviLanguage = useAppSelector(
+    (state) => state.language.selectedLanguage.navigation
+  );
+  const navigationList: ListedNavigation[] = [
+    {
+      id: 1,
+      name: naviLanguage.earnCookies,
+      link: "game",
+    },
+    {
+      id: 2,
+      name: naviLanguage.scoreboard,
+      link: "scoreboard",
+    },
+    {
+      id: 3,
+      name: naviLanguage.shop,
+      link: "shop",
+    },
+  ];
   const renderedNavigationList = navigationList.map((navigation) => {
     return (
       <NavigationItem

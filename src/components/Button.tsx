@@ -5,6 +5,7 @@ interface ButtonProps {
   readonly type?: "button" | "submit" | "reset" | undefined;
   readonly primary?: boolean;
   readonly menu?: boolean;
+  readonly lang?: boolean;
 }
 
 function Button({
@@ -13,6 +14,7 @@ function Button({
   onClick,
   primary,
   menu,
+  lang,
 }: ButtonProps): JSX.Element {
   let classes;
   if (primary) {
@@ -21,6 +23,10 @@ function Button({
   } else if (menu) {
     classes =
       " px-3 md:px-5 py-1 md:py-2 hover:bg-yellow-800 hover:bg-opacity-20 min-[500px]:first:rounded-bl-lg min-[500px]:first:rounded-tl-lg uppercase tracking-wider min-[500px]:last:rounded-br-lg min-[500px]:last:rounded-tr-lg duration-200 max-[500px]:[&:not(:last-child)]:border-b-4 min-[500px]:[&:not(:last-child)]:border-r-4 min-[500px]:[&:not(:first-child)]:border-l-4 border-stone-800 text-stone-300 hover:text-stone-50 min-w-[143px] sm:min-w-[172px] md:min-w-[217px] md:hover:min-w-[250px] ";
+  }
+  if (lang) {
+    classes =
+      "z-10 bg-opacity-100 rounded-lg shadow-md shadow-neutral-900 hover:-translate-y-1  active:translate-y-0 active:duration-[50ms] duration-200 absolute top-12 right-12 border-2 border-stone-800 overflow-hidden w-24 h-14";
   }
 
   return (

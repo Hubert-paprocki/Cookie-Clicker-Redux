@@ -13,6 +13,9 @@ function ScoreboardForm(): JSX.Element {
   const userNameRef = useRef<HTMLInputElement>(null);
   const ref = collection(firestore, "scores");
   const cookieValue = useAppSelector((state) => state.cookie.value);
+  const formLanguage = useAppSelector(
+    (state) => state.language.selectedLanguage.addToScoreboardForm
+  );
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,16 +39,16 @@ function ScoreboardForm(): JSX.Element {
       className=" flex flex-col gap-4 items-center justify-center grow mb-4"
     >
       <div className="">
-        <label htmlFor="">Your name:</label>
+        <label htmlFor="">{formLanguage.yourName}</label>
         <input
           className="bg-transparent border-2 border-yellow-800 border-opacity-20 rounded-md mx-2 px-2 py-0.5 w-36"
           type="text"
           ref={userNameRef}
-          placeholder="Anonymous"
+          placeholder={formLanguage.inputPlaceholder}
         />
       </div>
       <Button primary type="submit">
-        Add your score
+        {formLanguage.btnText}
       </Button>
     </form>
   );
