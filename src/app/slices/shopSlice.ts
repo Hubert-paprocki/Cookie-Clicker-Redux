@@ -3,8 +3,6 @@ import { buyBooster } from './actions';
 
 export interface Booster {
   id: number;
-  name: string;
-  desc: string;
   price: number;
   time?: number;
   isActive: boolean;
@@ -20,8 +18,6 @@ const initialState: BoostersState = {
   boosters: [
     {
       id: 0,
-      name: 'Granny Hands',
-      desc: 'Earns two cookies with one click',
       price: 40,
       isActive: false,
       cookieVal: 2,
@@ -29,8 +25,6 @@ const initialState: BoostersState = {
     },
     {
       id: 1,
-      name: 'One Worker',
-      desc: 'Makes one cookie per 2s',
       time: 2000,
       price: 50,
       isActive: false,
@@ -39,8 +33,6 @@ const initialState: BoostersState = {
     },
     {
       id: 2,
-      name: 'Two Workers',
-      desc: 'Makes one cookie per 1s',
       time: 1000,
       price: 100,
       isActive: false,
@@ -49,8 +41,6 @@ const initialState: BoostersState = {
     },
     {
       id: 3,
-      name: 'Worker Squad',
-      desc: 'Makes two cookies per 1s',
       time: 1000,
       price: 150,
       isActive: false,
@@ -59,8 +49,6 @@ const initialState: BoostersState = {
     },
     {
       id: 4,
-      name: 'Cookie Factory',
-      desc: 'Makes ten cookies per 2s',
       time: 2000,
       price: 1,
       isActive: false,

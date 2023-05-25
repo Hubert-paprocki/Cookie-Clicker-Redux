@@ -4,7 +4,10 @@ import CookieImg from "../../../../images/1464300474.svg";
 import { buyBooster } from "../../../../app/slices/actions";
 import { incrementValueInfinitely } from "../../../../app/slices/cookieSlice";
 import { Booster, setFlashRed } from "../../../../app/slices/shopSlice";
-
+interface TranslatedBooster extends Booster {
+  name: string;
+  desc: string;
+}
 function ShopTileItem({
   name,
   desc,
@@ -12,7 +15,7 @@ function ShopTileItem({
   id,
   time,
   cookieVal,
-}: Booster): JSX.Element {
+}: TranslatedBooster): JSX.Element {
   const dispatch = useAppDispatch();
   const cookieValue = useAppSelector((state) => state.cookie.value);
   const isBought = useAppSelector((state) => state.shop.boosters[id].isActive);
