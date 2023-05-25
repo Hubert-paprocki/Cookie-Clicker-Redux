@@ -7,7 +7,7 @@ export interface HistoryItem {
   price?: number;
   boosterId?: number;
   earnedCookiesVal?: number;
-  interval?:number
+  interval?: number;
 }
 
 interface CookieState {
@@ -26,7 +26,9 @@ const setHistory = (state: CookieState, message: HistoryItem) => {
   }
 };
 
-export const incrementValueInfinitely = (interval: number, cookieVal: number) => (dispatch: Dispatch) => {
+export const incrementValueInfinitely = (interval: number, cookieVal: number) => (
+  dispatch: Dispatch
+) => {
   setInterval(() => {
     dispatch(cookieSlice.actions.boosterIncrement({ cookieVal, interval }));
   }, interval);
@@ -40,21 +42,46 @@ const cookieSlice = createSlice({
       const { grannyHandsIsActive } = action.payload;
       const earnedCookiesVal = grannyHandsIsActive ? 2 : 1;
       state.value += earnedCookiesVal;
-      setHistory(state, { type: 'earn', cookieVal: state.value,earnedCookiesVal:earnedCookiesVal });
+      setHistory(state, {
+        type: 'earn',
+        cookieVal: state.value,
+        earnedCookiesVal,
+      });
     },
-    boosterIncrement: (state, action: PayloadAction<{ cookieVal: number; interval: number }>) => {
+    boosterIncrement: (
+      state,
+      action: PayloadAction<{ cookieVal: number; interval: number }>
+    ) => {
       const { cookieVal, interval } = action.payload;
       const earnedCookiesVal = cookieVal;
       state.value += earnedCookiesVal;
       const intervalInSeconds = interval / 1000;
-      setHistory(state, { type: 'autoEarn', cookieVal: state.value,earnedCookiesVal:earnedCookiesVal,interval:intervalInSeconds });
+      setHistory(state, {
+        type: 'autoEarn',
+        cookieVal: state.value,
+        earnedCookiesVal,
+        interval: intervalInSeconds,
+      });
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(buyBooster, (state, action: PayloadAction<{ id: number; price: number; name: string }>) => {
-      state.value -= action.payload.price;
-      setHistory(state, { type: 'boughtItem',price:action.payload.price,boosterId:action.payload.id, cookieVal: state.value, });
-    });
+    builder.addCase(
+      buyBooster,
+      (
+        state,
+        action: PayloadAction<{ id: number; price: number; name: string }>
+      ) => {
+        const { price, id } = action.payload;
+        state.value -= price;
+        const historyItem: HistoryItem = {
+          type: 'boughtItem',
+          price,
+          boosterId: id,
+          cookieVal: state.value,
+        };
+        setHistory(state, historyItem);
+      }
+    );
   },
 });
 

@@ -62,15 +62,14 @@ const initialState: BoostersState = {
       name: 'Cookie Factory',
       desc: 'Makes ten cookies per 2s',
       time: 2000,
-      price:1,
+      price: 1,
       isActive: false,
       cookieVal: 10,
       flashRed: false,
     },
   ],
 };
-//do not forget to change interface and edit booster state
-//(i will)
+
 const shopSlice = createSlice({
   name: 'shop',
   initialState,
