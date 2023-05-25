@@ -4,6 +4,8 @@ import {
   collection,
   onSnapshot,
   QuerySnapshot,
+  query,
+  orderBy,
 } from "firebase/firestore";
 import { firestore } from "../../firebase";
 
@@ -36,9 +38,12 @@ export const { setScoreList } = scoreboardSlice.actions;
 export const fetchScoreList = (): AppThunk<void> => async (
   dispatch: Dispatch
 ) => {
-  const scoresRef = collection(firestore, "scores");
+  let scoresQuery = query(
+    collection(firestore, "scores"),
+    orderBy("score", "desc")
+  );
 
-  const unsubscribe = onSnapshot(scoresRef, (querySnapshot: QuerySnapshot) => {
+  const unsubscribe = onSnapshot(scoresQuery, (querySnapshot: QuerySnapshot) => {
     const newData: Scoreboard[] = querySnapshot.docs.map((doc) => {
       const { username, score } = doc.data();
       return {
@@ -47,8 +52,6 @@ export const fetchScoreList = (): AppThunk<void> => async (
         score,
       };
     });
-
-    newData.sort((a, b) => b.score - a.score);
     dispatch(setScoreList(newData.slice(0, 25)));
   });
 
