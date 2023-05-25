@@ -4,9 +4,7 @@ import { HistoryItem } from "../../../../app/slices/cookieSlice";
 import CookieSvg from "../../../../images/1464300474.svg";
 
 const UsersActionHistory = (): JSX.Element => {
-  const recentHistory = useAppSelector((state) =>
-    state.cookie.history.slice(-3)
-  );
+  const recentHistory = useAppSelector((state) => state.cookie.history);
   const { selectedLanguage: language } = useAppSelector(
     (state) => state.language
   );
@@ -26,8 +24,8 @@ const UsersActionHistory = (): JSX.Element => {
     } else if (item.type === "boughtItem" && item.boosterId) {
       const boosterName = boosters[item.boosterId]?.name || "";
       return [
-        `${language.history.boughtItem[0]} ${boosterName}`,
-        `${language.history.boughtItem[1]} ${item.price}`,
+        `${language.history.boughtItem[0]} ${boosterName} ${item.price}`,
+        ``,
       ];
     }
     return ["", ""];
