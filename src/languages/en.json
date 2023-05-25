@@ -42,6 +42,6 @@
     "notBought":"Buy for"
   },
   "history":{
-    "earn":"You earned ${earnedCookies} cookie","autoEarn":"Worker earned ${earnedCookies} cookie in ","boughtItem":"You bought ${action.payload.name} for ${action.payload.price} cookie"
+    "earn":"You earned","autoEarn":["Worker earned" ," in "],"boughtItem":["You bought"," for "]
   }
 }

@@ -42,7 +42,7 @@
       "notBought":"Kup za"
     },
     "history":{
-      "earn":"Zarobiles ${earnedCookies} cookie","autoEarn":"Pracownik zarobil ${earnedCookies} cookie w ","boughtItem":"Kupiłeś ${action.payload.name} for ${action.payload.price} cookie"
+      "earn":"Zarobiles","autoEarn":["Pracownik zarobil"," w "],"boughtItem":["Kupiles "," za"]
     }
   }
 

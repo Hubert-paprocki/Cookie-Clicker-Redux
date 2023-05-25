@@ -1,16 +1,25 @@
 import { createSlice, PayloadAction, Dispatch } from '@reduxjs/toolkit';
 import { buyBooster } from './actions';
 
+export interface HistoryItem {
+  type: string;
+  cookieVal: number;
+  price?: number;
+  boosterId?: number;
+  earnedCookiesVal?: number;
+  interval?:number
+}
+
 interface CookieState {
   value: number;
-  history: string[];
+  history: HistoryItem[];
 }
 
 const MAX_HISTORY_LENGTH = 3;
 
 const initialState: CookieState = { value: 0, history: [] };
 
-const setHistory = (state: CookieState, message: string) => {
+const setHistory = (state: CookieState, message: HistoryItem) => {
   state.history.push(message);
   if (state.history.length > MAX_HISTORY_LENGTH) {
     state.history.shift();
@@ -29,22 +38,22 @@ const cookieSlice = createSlice({
   reducers: {
     increment: (state, action: PayloadAction<{ grannyHandsIsActive: boolean }>) => {
       const { grannyHandsIsActive } = action.payload;
-      const earnedCookies = grannyHandsIsActive ? 2 : 1;
-      state.value += earnedCookies;
-      setHistory(state, `You earned ${earnedCookies} cookie (${state.value})`);
+      const earnedCookiesVal = grannyHandsIsActive ? 2 : 1;
+      state.value += earnedCookiesVal;
+      setHistory(state, { type: 'earn', cookieVal: state.value,earnedCookiesVal:earnedCookiesVal });
     },
     boosterIncrement: (state, action: PayloadAction<{ cookieVal: number; interval: number }>) => {
       const { cookieVal, interval } = action.payload;
-      const earnedCookies = cookieVal;
-      state.value += earnedCookies;
-      const intervalInSeconds =  interval / 1000;
-      setHistory(state, `Worker earned ${earnedCookies} cookie in ${intervalInSeconds}" (${state.value})`);
+      const earnedCookiesVal = cookieVal;
+      state.value += earnedCookiesVal;
+      const intervalInSeconds = interval / 1000;
+      setHistory(state, { type: 'autoEarn', cookieVal: state.value,earnedCookiesVal:earnedCookiesVal,interval:intervalInSeconds });
     },
   },
   extraReducers: (builder) => {
     builder.addCase(buyBooster, (state, action: PayloadAction<{ id: number; price: number; name: string }>) => {
       state.value -= action.payload.price;
-      setHistory(state, `You bought ${action.payload.name} for ${action.payload.price} cookie`);
+      setHistory(state, { type: 'boughtItem',price:action.payload.price,boosterId:action.payload.id, cookieVal: state.value, });
     });
   },
 });
