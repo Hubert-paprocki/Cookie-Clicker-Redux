@@ -16,9 +16,17 @@ function LanguageBtn() {
   return (
     <Button lang type="button" onClick={handleClick}>
       {btnText === "pl" ? (
-        <img src={polishFlag} alt="polishFlag" className="h-full w-full" />
+        <img
+          src={polishFlag}
+          alt="polishFlag"
+          className="h-full object-cover"
+        />
       ) : (
-        <img src={usaFlag} alt="usaFlag" className="h-full" />
+        <img
+          src={usaFlag}
+          alt="usaFlag"
+          className="h-full object-cover object-left"
+        />
       )}
     </Button>
   );

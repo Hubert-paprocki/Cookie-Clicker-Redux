@@ -40,5 +40,8 @@
   "shopBtn":{
     "bought":"item purchased",
     "notBought":"Buy for"
+  },
+  "history":{
+    "earn":"You earned ${earnedCookies} cookie","autoEarn":"Worker earned ${earnedCookies} cookie in ","boughtItem":"You bought ${action.payload.name} for ${action.payload.price} cookie"
   }
 }

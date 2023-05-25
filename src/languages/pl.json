@@ -40,6 +40,9 @@
     "shopBtn":{
       "bought":"Przedmiot kupiony",
       "notBought":"Kup za"
+    },
+    "history":{
+      "earn":"Zarobiles ${earnedCookies} cookie","autoEarn":"Pracownik zarobil ${earnedCookies} cookie w ","boughtItem":"Kupiłeś ${action.payload.name} for ${action.payload.price} cookie"
     }
   }
 

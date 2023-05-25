@@ -26,7 +26,7 @@ function Button({
   }
   if (lang) {
     classes =
-      "z-10 bg-opacity-100 rounded-lg shadow-md shadow-neutral-900 hover:-translate-y-1  active:translate-y-0 active:duration-[50ms] duration-200 absolute top-12 right-12 border-2 border-stone-800 overflow-hidden w-24 h-14";
+      "z-10 bg-opacity-100 rounded-lg shadow-md shadow-neutral-900 hover:-translate-y-1  active:translate-y-0 active:duration-[50ms] duration-200 absolute top-12 right-12 border-2 border-stone-800 overflow-hidden w-[4.5rem] h-14 flex ";
   }
 
   return (
