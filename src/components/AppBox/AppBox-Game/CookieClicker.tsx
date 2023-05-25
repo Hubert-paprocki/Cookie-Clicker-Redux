@@ -1,7 +1,7 @@
 import React from "react";
 import CookieBtn from "../../../images/1464300474.svg";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { increment } from "../../../app/slices/cookieSlice";
+import { increment } from "../../../app/slices/actions";
 
 function CookieClicker(): JSX.Element {
   const dispatch = useAppDispatch();

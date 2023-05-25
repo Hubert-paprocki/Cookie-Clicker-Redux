@@ -17,7 +17,6 @@ function UsersActiveBooster(): JSX.Element {
       <h2>{titleActiveBoostersLanguage}</h2>
       <ul className="text-center">
         {selectedItems.map((item) => {
-          console.log(item);
           const boosterLanguage = boostersLanguage.find(
             (language) => language.id === item.id
           );
