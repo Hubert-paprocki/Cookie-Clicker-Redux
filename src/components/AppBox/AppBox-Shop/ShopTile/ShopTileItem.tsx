@@ -26,6 +26,7 @@ function ShopTileItem({
   const handleBuyItem = () => {
     if (cookieValue >= price && !isBought) {
       dispatch(buyBooster({ id, price, name }));
+
       if (time) {
         dispatch(incrementValueInfinitely(time, cookieVal));
       }

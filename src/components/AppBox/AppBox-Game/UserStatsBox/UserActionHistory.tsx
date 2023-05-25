@@ -21,13 +21,14 @@ const UsersActionHistory = (): JSX.Element => {
         `${language.history.autoEarn[0]} ${item.earnedCookiesVal}`,
         `${language.history.autoEarn[1]} ${item.interval}"`,
       ];
-    } else if (item.type === "boughtItem" && item.boosterId) {
-      const boosterName = boosters[item.boosterId]?.name || "";
+    } else if (item.type === "boughtItem") {
+      const boosterName = boosters[item.boosterId || 0]?.name;
       return [
         `${language.history.boughtItem[0]} ${boosterName} ${item.price}`,
         ``,
       ];
     }
+
     return ["", ""];
   };
 
