@@ -29,7 +29,7 @@
   {"earnCookies":"Zarob ciastka","scoreboard":"tablica wynikow","shop":"sklep"}
 ,
   "scoreboard":{
-    "name":"nazwa:","score":"wynik:"
+    "name":"nazwa:","score":"wynik:","anonymousName":"Anonimowy"
   },
   "addToScoreboardForm":{
     "yourName":"twoja nazwa:","inputPlaceholder":"Anonimowy","btnText":"dodaj wynik"

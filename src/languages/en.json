@@ -29,7 +29,7 @@
     {"earnCookies":"earn cookies","scoreboard":"scoreboard","shop":"shop"}
   ,
   "scoreboard":{
-    "name":"name:","score":"score:"
+    "name":"name:","score":"score:","anonymousName":"Anonymous"
   },
   "addToScoreboardForm":{
     "yourName":"Your name:","inputPlaceholder":"Anonymous","btnText":"Add your score"
