@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import pl from "../../languages/pl.json"
-import en from "../../languages/en.json"
+import pl from "../../languages/pl.json";
+import en from "../../languages/en.json";
 
+const browserPolLangCheck = navigator.language.toLowerCase().includes("pl");
 const initialState = {
-  selectedLanguage: en,
-  langSwitch:"en"
+  selectedLanguage: browserPolLangCheck ? pl : en,
+  langSwitch: browserPolLangCheck ? "pl" : "en",
 };
 
 const languageSlice = createSlice({
