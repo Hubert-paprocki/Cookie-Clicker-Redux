@@ -1,4 +1,5 @@
 import React from "react";
+
 interface ButtonProps {
   readonly children?: React.ReactNode;
   readonly onClick?: () => void;
@@ -6,6 +7,9 @@ interface ButtonProps {
   readonly primary?: boolean;
   readonly menu?: boolean;
   readonly lang?: boolean;
+  readonly shopBtn?: boolean;
+  readonly disabled?: boolean;
+  readonly flashRed?: boolean;
 }
 
 function Button({
@@ -15,6 +19,9 @@ function Button({
   primary,
   menu,
   lang,
+  shopBtn,
+  disabled,
+  flashRed,
 }: ButtonProps): JSX.Element {
   let classes;
   if (primary) {
@@ -28,6 +35,15 @@ function Button({
     classes =
       "z-20 bg-opacity-100 rounded-lg shadow-md shadow-neutral-900 hover:-translate-y-1 active:translate-y-0 active:duration-[50ms] duration-200 max-[500px]:absolute min-[500px]:block sm:absolute min-[500px]:top-12 right-0 min-[500px]:right-12 border-2 border-stone-800 overflow-hidden max-[500px]:w-14 max-[500px]:h-12 w-[4.5rem] h-14 flex";
   }
+  if (shopBtn) {
+    classes = `bg-green-400 bg-opacity-20 py-1 px-4 rounded-lg sm:rounded-full flex items-center justify-center shadow-md shadow-neutral-800 ${
+      disabled
+        ? "opacity-50"
+        : `hover:bg-opacity-50 duration-200 hover:-translate-y-0.5 active:translate-y-0 active:duration-75 ${
+            flashRed ? "bg-red-500" : ""
+          }`
+    }`;
+  }
 
   return (
     <button
@@ -35,6 +51,7 @@ function Button({
       onClick={onClick}
       className={classes}
       style={{ WebkitTapHighlightColor: "transparent" }}
+      disabled={disabled}
     >
       {children}
     </button>
