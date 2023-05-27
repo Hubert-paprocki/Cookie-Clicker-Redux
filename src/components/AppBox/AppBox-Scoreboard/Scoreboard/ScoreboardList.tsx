@@ -9,6 +9,7 @@ import Button from "../../../Button";
 
 function ScoreboardList(): JSX.Element {
   const scoreList = useAppSelector((state) => state.scoreboard.scoreList);
+  const err = useAppSelector((state) => state.scoreboard.error);
   const dispatch = useAppDispatch();
 
   const handleLoadMore = () => {
@@ -30,6 +31,7 @@ function ScoreboardList(): JSX.Element {
   return (
     <ol className="flex flex-col gap-3 items-center max-h-[500px] overflow-y-scroll ml-4">
       {renderedScoreboardList}
+      {err && `error: ${err}`}
       <Button primary onClick={handleLoadMore}>
         load more
       </Button>

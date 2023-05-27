@@ -12,11 +12,13 @@ interface Scoreboard {
 interface ScoreboardState {
   scoreList: Scoreboard[];
   loadedCount: number;
+  error: string | null;
 }
 
 const initialState: ScoreboardState = {
   scoreList: [],
   loadedCount: 10,
+  error: null,
 };
 
 const scoreboardSlice = createSlice({
@@ -25,40 +27,52 @@ const scoreboardSlice = createSlice({
   reducers: {
     setScoreList: (state, action: PayloadAction<Scoreboard[]>) => {
       state.scoreList = [...action.payload];
+      state.error = null; // Clear any previous error
     },
     loadMoreScores: (state) => {
       state.loadedCount += 10;
+      state.error = null; // Clear any previous error
+    },
+    setError: (state, action: PayloadAction<string>) => {
+      state.error = action.payload;
     },
   },
 });
 
-export const { setScoreList, loadMoreScores } = scoreboardSlice.actions;
+export const { setScoreList, loadMoreScores, setError } = scoreboardSlice.actions;
 
 export const fetchScoreList = (): AppThunk<void> => async (
   dispatch: Dispatch,
   getState
 ) => {
-  const state = getState().scoreboard;
-  const scoresQuery = query(
-    collection(firestore, "scores"),
-    orderBy("score", "desc"),
-    limit(state.loadedCount)
-  );
+  try {
+    const state = getState().scoreboard;
+    const scoresQuery = query(
+      collection(firestore, "scores"),
+      orderBy("score", "desc"),
+      limit(state.loadedCount)
+    );
 
-  const unsubscribe = onSnapshot(
-    scoresQuery,
-    (querySnapshot) => {
-      const newData: Scoreboard[] = querySnapshot.docs.map((doc) => {
-        const { username, score } = doc.data();
-        return {
-          id: doc.id,
-          username,
-          score,
-        };
-      });
-      dispatch(setScoreList(newData));
-    }
-  );
+    const unsubscribe = onSnapshot(
+      scoresQuery,
+      (querySnapshot) => {
+        const newData: Scoreboard[] = querySnapshot.docs.map((doc) => {
+          const { username, score } = doc.data();
+          return {
+            id: doc.id,
+            username,
+            score,
+          };
+        });
+        dispatch(setScoreList(newData));
+      },
+      (error) => {
+        dispatch(setError(error.message));
+      }
+    );
+  } catch (error:any) {
+    dispatch(setError(error.message));
+  }
 };
 
 export default scoreboardSlice.reducer;
