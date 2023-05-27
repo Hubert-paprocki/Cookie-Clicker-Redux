@@ -1,4 +1,3 @@
-import React from "react";
 import NavigationList from "./Navigation/NavigationList";
 import GameBox from "./AppBox-Game/GameBox";
 import ShopBox from "./AppBox-Shop/ShopBox";

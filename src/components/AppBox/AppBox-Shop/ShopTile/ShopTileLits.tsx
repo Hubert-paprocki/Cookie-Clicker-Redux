@@ -1,4 +1,3 @@
-import React from "react";
 import ShopTileItem from "./ShopTileItem";
 import { useAppSelector } from "../../../../app/hooks";
 import { Booster } from "../../../../app/slices/shopSlice";

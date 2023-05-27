@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import CookieImg from "../../../../images/1464300474.svg";
 import { buyBooster } from "../../../../app/slices/actions";

@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ButtonProps {
   readonly children?: React.ReactNode;
   readonly onClick?: () => void;

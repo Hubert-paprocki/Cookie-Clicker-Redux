@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppDispatch } from "../../../app/hooks";
 import { changePage } from "../../../app/slices/navigationSlice";
 import Button from "../../Button";

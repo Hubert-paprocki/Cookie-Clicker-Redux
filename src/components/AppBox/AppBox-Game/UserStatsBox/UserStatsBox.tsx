@@ -1,4 +1,3 @@
-import React from "react";
 import UsersActionHistory from "./UserActionHistory";
 import UsersActiveBooster from "./UserActiveBooster";
 import UserCurrentScore from "./UserCurrentScore";

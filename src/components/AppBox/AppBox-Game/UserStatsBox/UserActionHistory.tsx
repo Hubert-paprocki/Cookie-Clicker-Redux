@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppSelector } from "../../../../app/hooks";
 import { HistoryItem } from "../../../../app/slices/cookieSlice";
 import CookieSvg from "../../../../images/1464300474.svg";

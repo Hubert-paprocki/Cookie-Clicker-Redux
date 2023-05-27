@@ -1,4 +1,3 @@
-import React from "react";
 import Footer from "./components/Footer/Footer";
 import bg from "./images/CookieBg.jpg";
 import Appbox from "./components/AppBox/AppBox";

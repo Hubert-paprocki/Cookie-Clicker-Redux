@@ -1,4 +1,3 @@
-import React from "react";
 import SocialMediaList from "./SocialMediaList/SocialMediaList";
 import { useAppSelector } from "../../app/hooks";
 function Footer(): JSX.Element {

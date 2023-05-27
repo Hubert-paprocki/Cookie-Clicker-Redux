@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import React from "react";
 
 interface SocialMediaItemProps {
   readonly img: ReactNode;

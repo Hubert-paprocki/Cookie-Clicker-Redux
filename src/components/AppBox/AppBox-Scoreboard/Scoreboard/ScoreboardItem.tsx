@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppSelector } from "../../../../app/hooks";
 interface ScoreboardItemProps {
   readonly userName: string;

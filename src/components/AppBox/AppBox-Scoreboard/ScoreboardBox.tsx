@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ScoreboardList from "./Scoreboard/ScoreboardList";
 import ScoreboardForm from "./Scoreboard/ScoreboardForm";
 import { useAppSelector } from "../../../app/hooks";
