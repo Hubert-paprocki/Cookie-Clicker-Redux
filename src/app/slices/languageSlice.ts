@@ -3,6 +3,7 @@ import pl from "../../languages/pl.json";
 import en from "../../languages/en.json";
 
 const browserPolLangCheck = navigator.language.toLowerCase().includes("pl");
+
 const initialState = {
   selectedLanguage: browserPolLangCheck ? pl : en,
   langSwitch: browserPolLangCheck ? "pl" : "en",
