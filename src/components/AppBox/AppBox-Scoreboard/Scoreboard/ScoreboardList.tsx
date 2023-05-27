@@ -16,9 +16,11 @@ function ScoreboardList(): JSX.Element {
     dispatch(loadMoreScores());
   };
 
+  const loadMoreScoresAction = loadMoreScores();
+
   useEffect(() => {
     dispatch(fetchScoreList());
-  }, [handleLoadMore]);
+  }, [dispatch, loadMoreScoresAction]);
 
   const renderedScoreboardList = scoreList.map((scoreboard) => (
     <ScoreboardItem
