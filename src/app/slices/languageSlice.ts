@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import pl from "../../languages/pl.json";
 import en from "../../languages/en.json";
 
-const browserPolLangCheck = navigator.language.toLowerCase().includes("pl");
+const browserPolLangCheck = /pl/i.test(navigator.language);
 
 const initialState = {
   selectedLanguage: browserPolLangCheck ? pl : en,

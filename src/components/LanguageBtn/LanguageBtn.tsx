@@ -1,11 +1,10 @@
-import React from "react";
-import Button from "../Button";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setLanguage } from "../../app/slices/languageSlice";
+import Button from "../Button";
 import polishFlag from "../../images/polishFlag.png";
 import usaFlag from "../../images/usaFlag.png";
 
-function LanguageBtn() {
+function LanguageButton() {
   const btnText = useAppSelector((state) => state.language.langSwitch);
   const dispatch = useAppDispatch();
 
@@ -13,23 +12,19 @@ function LanguageBtn() {
     dispatch(setLanguage());
   };
 
+  const flagImage = (
+    <img
+      src={btnText === "en" ? polishFlag : usaFlag}
+      alt={btnText === "en" ? `Polish flag` : `USA flag`}
+      className="h-full object-cover object-left"
+    />
+  );
+
   return (
     <Button lang type="button" onClick={handleClick}>
-      {btnText === "pl" ? (
-        <img
-          src={polishFlag}
-          alt="polishFlag"
-          className="h-full object-cover"
-        />
-      ) : (
-        <img
-          src={usaFlag}
-          alt="usaFlag"
-          className="h-full object-cover object-left"
-        />
-      )}
+      {flagImage}
     </Button>
   );
 }
 
-export default LanguageBtn;
+export default LanguageButton;
