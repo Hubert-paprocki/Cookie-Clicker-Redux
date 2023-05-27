@@ -1,9 +1,9 @@
 import NavigationItem from "./NavigationItem";
 import { useAppSelector } from "../../../app/hooks";
-interface ListedNavigation {
-  id: number;
-  name: string;
-  link: string;
+import { NavigationState } from "../../../app/slices/navigationSlice";
+interface ListedNavigation extends NavigationState {
+  readonly id: number;
+  readonly name: string;
 }
 
 function NavigationList(): JSX.Element {

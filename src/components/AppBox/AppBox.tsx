@@ -6,7 +6,7 @@ import { useAppSelector } from "../../app/hooks";
 import ScoreboardBox from "./AppBox-Scoreboard/ScoreboardBox";
 
 function AppBox(): JSX.Element {
-  const slide = useAppSelector((state) => state.navigation.value);
+  const slide = useAppSelector((state) => state.navigation.link);
 
   return (
     <div className="w-full min-[1024px]:w-[1024px] bg-stone-800 rounded-none  overflow-hidden min-[1024px]:rounded-lg max-[500px]:min-h-screen ">

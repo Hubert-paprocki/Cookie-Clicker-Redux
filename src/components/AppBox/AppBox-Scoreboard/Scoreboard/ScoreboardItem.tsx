@@ -1,12 +1,11 @@
 import React from "react";
 import { useAppSelector } from "../../../../app/hooks";
-
-interface NavigationItemProps {
-  userName: string;
-  score: number;
+interface ScoreboardItemProps {
+  readonly userName: string;
+  readonly score: number;
 }
 
-function NavigationItem({ userName, score }: NavigationItemProps): JSX.Element {
+function ScoreboardItem({ userName, score }: ScoreboardItemProps): JSX.Element {
   const scoreboardLanguage = useAppSelector(
     (state) => state.language.selectedLanguage.scoreboard
   );
@@ -30,4 +29,4 @@ function NavigationItem({ userName, score }: NavigationItemProps): JSX.Element {
   );
 }
 
-export default NavigationItem;
+export default ScoreboardItem;

@@ -7,8 +7,8 @@ import { Booster, setFlashRed } from "../../../../app/slices/shopSlice";
 import Button from "../../../Button";
 
 interface TranslatedBooster extends Booster {
-  name: string;
-  desc: string;
+  readonly name: string;
+  readonly desc: string;
 }
 
 function ShopTileItem({

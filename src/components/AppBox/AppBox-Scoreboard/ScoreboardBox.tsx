@@ -4,7 +4,7 @@ import ScoreboardForm from "./Scoreboard/ScoreboardForm";
 import { useAppSelector } from "../../../app/hooks";
 
 function ScoreboardBox(): JSX.Element {
-  const slide = useAppSelector((state) => state.navigation.value);
+  const slide = useAppSelector((state) => state.navigation.link);
   const [shouldRender, setShouldRender] = useState(false);
 
   useEffect(() => {

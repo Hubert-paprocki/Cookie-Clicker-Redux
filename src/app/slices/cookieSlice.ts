@@ -2,7 +2,7 @@ import { createSlice, PayloadAction, Dispatch } from '@reduxjs/toolkit';
 import { increment, boosterIncrement, buyBooster } from './actions';
 
 export interface HistoryItem {
-  type: string;
+  type: 'earn' | 'autoEarn' | 'boughtItem';
   cookieVal: number;
   price?: number;
   boosterId?: number;

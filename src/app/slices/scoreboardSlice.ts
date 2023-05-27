@@ -27,11 +27,11 @@ const scoreboardSlice = createSlice({
   reducers: {
     setScoreList: (state, action: PayloadAction<Scoreboard[]>) => {
       state.scoreList = [...action.payload];
-      state.error = null; // Clear any previous error
+      state.error = null;
     },
     loadMoreScores: (state) => {
       state.loadedCount += 10;
-      state.error = null; // Clear any previous error
+      state.error = null;
     },
     setError: (state, action: PayloadAction<string>) => {
       state.error = action.payload;
@@ -70,7 +70,7 @@ export const fetchScoreList = (): AppThunk<void> => async (
         dispatch(setError(error.message));
       }
     );
-  } catch (error:any) {
+  } catch (error: any) {
     dispatch(setError(error.message));
   }
 };

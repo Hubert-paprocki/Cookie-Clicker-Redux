@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 import React from "react";
 
 interface SocialMediaItemProps {
-  img: ReactNode;
-  link: string;
+  readonly img: ReactNode;
+  readonly link: string;
 }
 
 const SocialMediaItem = ({ img, link }: SocialMediaItemProps): JSX.Element => {

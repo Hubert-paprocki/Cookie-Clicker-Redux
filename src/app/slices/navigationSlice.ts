@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-interface NavigationState {
-  value: "game"|"shop"|"scoreboard"
+export interface NavigationState {
+  link: "game"|"shop"|"scoreboard"
 }
 
-const initialState = { value: "game" } as NavigationState
+const initialState: NavigationState = { link: "game" };
 
 const navigationSlice = createSlice({
   name: 'navigation',
   initialState,
   reducers: {
-    changePage(state, action: PayloadAction<string>) {
-      state.value = action.payload as NavigationState["value"];
+    changePage(state, action: PayloadAction<"game"|"shop"|"scoreboard">) {
+      state.link = action.payload;
     },
   },
 })

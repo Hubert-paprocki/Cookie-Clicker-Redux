@@ -3,10 +3,10 @@ import SocialMediaItem from "./SocialMediaItem";
 import { ReactNode } from "react";
 import React from "react";
 interface ListedSocialMedia {
-  id: number;
-  name: string;
-  icon: ReactNode;
-  link: string;
+  readonly id: number;
+  readonly name: string;
+  readonly icon: ReactNode;
+  readonly link: string;
 }
 
 const ListedSocialMedias: ListedSocialMedia[] = [

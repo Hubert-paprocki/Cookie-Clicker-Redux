@@ -15,13 +15,12 @@ const languageSlice = createSlice({
   reducers: {
     setLanguage: (state) => {
       if (state.langSwitch === "pl") {
-        state.selectedLanguage = en
-        state.langSwitch = "en"
-      } else if(state.langSwitch === "en") {
-        state.selectedLanguage = pl
-        state.langSwitch = "pl"
+        state.selectedLanguage = en;
+        state.langSwitch = "en";
+      } else if (state.langSwitch === "en") {
+        state.selectedLanguage = pl;
+        state.langSwitch = "pl";
       }
-
     },
   },
 });
