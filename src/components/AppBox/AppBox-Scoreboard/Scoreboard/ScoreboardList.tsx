@@ -12,15 +12,14 @@ function ScoreboardList(): JSX.Element {
   const err = useAppSelector((state) => state.scoreboard.error);
   const dispatch = useAppDispatch();
 
-  const handleLoadMore = () => {
-    dispatch(loadMoreScores());
+  const handleLoadMore = async () => {
+    await dispatch(loadMoreScores());
+    dispatch(fetchScoreList());
   };
-
-  const loadMoreScoresAction = loadMoreScores();
 
   useEffect(() => {
     dispatch(fetchScoreList());
-  }, [dispatch, loadMoreScoresAction]);
+  }, [dispatch]);
 
   const renderedScoreboardList = scoreList.map((scoreboard) => (
     <ScoreboardItem
