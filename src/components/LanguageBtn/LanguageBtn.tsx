@@ -1,6 +1,6 @@
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setLanguage } from "../../app/slices/languageSlice";
-import Button from "../Button";
+import Button from "../Button/Button";
 import polishFlag from "../../images/polishFlag.png";
 import usaFlag from "../../images/usaFlag.png";
 

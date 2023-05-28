@@ -5,7 +5,7 @@ import {
   fetchScoreList,
   loadMoreScores,
 } from "../../../../app/slices/scoreboardSlice";
-import Button from "../../../Button";
+import Button from "../../../Button/Button";
 
 function ScoreboardList(): JSX.Element {
   const scoreList = useAppSelector((state) => state.scoreboard.scoreList);

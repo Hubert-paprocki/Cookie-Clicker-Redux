@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { firestore } from "../../../../firebase";
 import { addDoc, collection } from "@firebase/firestore";
 import { useAppSelector } from "../../../../app/hooks";
-import Button from "../../../Button";
+import Button from "../../../Button/Button";
 
 interface Score {
   username: string;

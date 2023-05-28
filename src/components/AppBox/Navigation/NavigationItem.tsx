@@ -1,6 +1,6 @@
 import { useAppDispatch } from "../../../app/hooks";
 import { changePage } from "../../../app/slices/navigationSlice";
-import Button from "../../Button";
+import Button from "../../Button/Button";
 import { NavigationState } from "../../../app/slices/navigationSlice";
 interface NavigationItemProps extends NavigationState {
   readonly name: string;

@@ -3,7 +3,7 @@ import CookieImg from "../../../../images/1464300474.svg";
 import { buyBooster } from "../../../../app/slices/actions";
 import { incrementValueInfinitely } from "../../../../app/slices/cookieSlice";
 import { Booster, setFlashRed } from "../../../../app/slices/shopSlice";
-import Button from "../../../Button";
+import Button from "../../../Button/Button";
 
 interface TranslatedBooster extends Booster {
   readonly name: string;
