@@ -10,7 +10,7 @@ function Footer(): JSX.Element {
 
   const currentYear = new Date().getFullYear();
   return (
-    <div className=" bg-yellow-900 bg-opacity-20  text-neutral-300 text-md xs:text-lg px-5 xs:px-10 flex flex-col pt-0 md:pt-5 justify-center items-center text-center  md:flex-row  pb-8 ">
+    <footer className=" bg-yellow-900 bg-opacity-20  text-neutral-300 text-md xs:text-lg px-5 xs:px-10 flex flex-col pt-0 md:pt-5 justify-center items-center text-center  md:flex-row  pb-8 ">
       <p className="w-full max-w-xl md:pr-12 md:w-1/2 pt-5 border-b-2 border-neutral-800 md:border-none pb-5 md:pb-0 font-norma items">
         {descriptionLanguage}
       </p>
@@ -30,7 +30,7 @@ function Footer(): JSX.Element {
         </p>
         <SocialMediaList />
       </div>
-    </div>
+    </footer>
   );
 }
 

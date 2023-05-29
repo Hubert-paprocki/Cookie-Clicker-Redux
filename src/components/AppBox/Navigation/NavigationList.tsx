@@ -46,9 +46,11 @@ function NavigationList(): JSX.Element {
   );
 
   return (
-    <div className="flex flex-col min-[500px]:flex-row justify-between bg-yellow-800 bg-opacity-20 rounded-lg m-4 xs:m-1">
-      {renderedNavigationList}
-    </div>
+    <nav>
+      <ul className="flex flex-col min-[500px]:flex-row justify-between bg-yellow-800 bg-opacity-20 rounded-lg m-4 xs:m-1">
+        {renderedNavigationList}
+      </ul>
+    </nav>
   );
 }
 

@@ -29,13 +29,15 @@ const ScoreboardList = (): JSX.Element => {
   ));
 
   return (
-    <ol className="flex flex-col gap-3 items-center max-h-[500px] overflow-y-scroll ml-4">
+    <ul className="flex flex-col gap-3 items-center max-h-[500px] overflow-y-scroll ml-4">
       {renderedScoreboardList}
       {error && `error: ${error}`}
-      <Button primary onClick={handleLoadMore}>
-        load more
-      </Button>
-    </ol>
+      <li>
+        <Button primary onClick={handleLoadMore}>
+          load more
+        </Button>
+      </li>
+    </ul>
   );
 };
 

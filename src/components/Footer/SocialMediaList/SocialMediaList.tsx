@@ -41,9 +41,9 @@ function SocialMediaList(): JSX.Element {
     );
   });
   return (
-    <div className="flex flex-wrap justify-center items-center  mt-6  md:my-10 flex-row gap-x-5">
+    <ul className="flex flex-wrap justify-center items-center  mt-6  md:my-10 flex-row gap-x-5">
       {renderedSocialMediaList}
-    </div>
+    </ul>
   );
 }
 
