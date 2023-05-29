@@ -50,7 +50,7 @@ const initialState: BoostersState = {
     {
       id: 4,
       time: 2000,
-      price: 1,
+      price: 250,
       isActive: false,
       cookieVal: 10,
       flashRed: false,
@@ -62,14 +62,14 @@ const shopSlice = createSlice({
   name: 'shop',
   initialState,
   reducers: {
-    activateBooster: (state, action: PayloadAction<number>) => {
+    activateBooster: (state, action: PayloadAction<number>): void => {
       const boosterId = action.payload;
       const booster = state.boosters.find((b) => b.id === boosterId);
       if (booster) {
         booster.isActive = true;
       }
     },
-    setFlashRed: (state, action: PayloadAction<{ id: number; value: boolean }>) => {
+    setFlashRed: (state, action: PayloadAction<{ id: number; value: boolean }>): void => {
       const { id, value } = action.payload;
       const booster = state.boosters.find((b) => b.id === id);
       if (booster) {
@@ -77,8 +77,8 @@ const shopSlice = createSlice({
       }
     },
   },
-  extraReducers(builder) {
-    builder.addCase(buyBooster, (state, action: PayloadAction<{ id: number; price: number }>) => {
+  extraReducers: (builder) => {
+    builder.addCase(buyBooster, (state, action: PayloadAction<{ id: number; price: number }>): void => {
       const { id } = action.payload;
       const booster = state.boosters.find((b) => b.id === id);
       if (booster && !booster.isActive) {

@@ -41,16 +41,13 @@ const scoreboardSlice = createSlice({
 
 export const { setScoreList, loadMoreScores, setError } = scoreboardSlice.actions;
 
-export const fetchScoreList = (): AppThunk<void> => async (
-  dispatch: Dispatch,
-  getState
-) => {
+export const fetchScoreList = (): AppThunk => async (dispatch: Dispatch, getState) => {
   try {
-    const state = getState().scoreboard;
+    const { loadedCount } = getState().scoreboard;
     const scoresQuery = query(
       collection(firestore, "scores"),
       orderBy("score", "desc"),
-      limit(state.loadedCount)
+      limit(loadedCount)
     );
 
     const unsubscribe = onSnapshot(
@@ -70,6 +67,8 @@ export const fetchScoreList = (): AppThunk<void> => async (
         dispatch(setError(error.message));
       }
     );
+
+    return unsubscribe;
   } catch (error: any) {
     dispatch(setError(error.message));
   }

@@ -27,7 +27,6 @@ function ScoreboardForm(): JSX.Element {
     } catch (error) {
       console.log(error);
     }
-
     if (userNameRef.current) {
       userNameRef.current.value = "";
     }

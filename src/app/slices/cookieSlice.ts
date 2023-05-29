@@ -19,7 +19,7 @@ const MAX_HISTORY_LENGTH = 3;
 
 const initialState: CookieState = { value: 0, history: [] };
 
-const setHistory = (state: CookieState, message: HistoryItem) => {
+const setHistory = (state: CookieState, message: HistoryItem): void => {
   state.history.push(message);
   if (state.history.length > MAX_HISTORY_LENGTH) {
     state.history.shift();
@@ -28,7 +28,7 @@ const setHistory = (state: CookieState, message: HistoryItem) => {
 
 export const incrementValueInfinitely = (interval: number, cookieVal: number) => (
   dispatch: Dispatch
-) => {
+): void => {
   setInterval(() => {
     dispatch(boosterIncrement({ cookieVal, interval }));
   }, interval);
@@ -39,7 +39,7 @@ const cookieSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(increment, (state, action: PayloadAction<{ grannyHandsIsActive: boolean }>) => {
+    builder.addCase(increment, (state, action: PayloadAction<{ grannyHandsIsActive: boolean }>): void => {
       const { grannyHandsIsActive } = action.payload;
       const earnedCookiesVal = grannyHandsIsActive ? 2 : 1;
       state.value += earnedCookiesVal;
@@ -52,7 +52,7 @@ const cookieSlice = createSlice({
 
     builder.addCase(
       boosterIncrement,
-      (state, action: PayloadAction<{ cookieVal: number; interval: number }>) => {
+      (state, action: PayloadAction<{ cookieVal: number; interval: number }>): void => {
         const { cookieVal, interval } = action.payload;
         const earnedCookiesVal = cookieVal;
         state.value += earnedCookiesVal;
@@ -68,7 +68,7 @@ const cookieSlice = createSlice({
 
     builder.addCase(
       buyBooster,
-      (state, action: PayloadAction<{ id: number; price: number; name: string }>) => {
+      (state, action: PayloadAction<{ id: number; price: number; name: string }>): void => {
         const { price, id } = action.payload;
         state.value -= price;
         const historyItem: HistoryItem = {

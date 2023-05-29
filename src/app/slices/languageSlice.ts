@@ -4,7 +4,12 @@ import en from "../../languages/en.json";
 
 const browserPolLangCheck = /pl/i.test(navigator.language);
 
-const initialState = {
+interface LanguageState {
+  selectedLanguage: typeof pl | typeof en;
+  langSwitch: "pl" | "en";
+}
+
+const initialState: LanguageState = {
   selectedLanguage: browserPolLangCheck ? pl : en,
   langSwitch: browserPolLangCheck ? "pl" : "en",
 };
