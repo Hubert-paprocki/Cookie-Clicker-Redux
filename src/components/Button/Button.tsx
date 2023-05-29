@@ -39,6 +39,9 @@ function Button({
   if (!disabled && flashRed) {
     classes += " bg-red-500";
   }
+  if (disabled) {
+    classes += " opacity-40 hover:translate-y-0 active:translate-y-0";
+  }
 
   return (
     <button
@@ -46,7 +49,7 @@ function Button({
       onClick={onClick}
       className={classes}
       style={{ WebkitTapHighlightColor: "transparent" }}
-      disabled={disabled}
+      disabled={disabled || false}
     >
       {children}
     </button>
