@@ -3,7 +3,7 @@ import cookieReducer from './slices/cookieSlice';
 import navigationReducer from './slices/navigationSlice';
 import shopReducer from './slices/shopSlice';
 import scoreboardReducer from './slices/scoreboardSlice';
-import languageReducer from './slices/languageSlice'
+import languageReducer from './slices/languageSlice';
 
 export const store = configureStore({
   reducer: {
