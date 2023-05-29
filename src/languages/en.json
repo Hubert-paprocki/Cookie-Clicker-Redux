@@ -24,7 +24,7 @@
       "description": "makes ten cookies per 2s."
     }
   ],
-  "credits": {"part1":"this website was made by", "part2":"all rights reserved. copyright ©"},
+  "credits": {"part1":"this website was made by", "part2":"all rights reserved. ©"},
   "navigation":
     {"earnCookies":"earn cookies","scoreboard":"scoreboard","shop":"shop"}
   ,

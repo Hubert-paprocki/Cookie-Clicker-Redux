@@ -26,7 +26,7 @@ function Footer(): JSX.Element {
               Hubert Paprocki
             </span>
           </span>
-          {creditsLanguage.part1} {currentYear}
+          {creditsLanguage.part2} {currentYear}
         </p>
         <SocialMediaList />
       </div>
