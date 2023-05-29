@@ -22,6 +22,7 @@ function CookieClicker(): JSX.Element {
           handleClick();
         }}
         style={{ WebkitTapHighlightColor: "transparent" }}
+        data-testid="cookie-button"
       >
         <img
           src={CookieBtn}

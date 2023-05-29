@@ -6,7 +6,7 @@ function Score(): JSX.Element {
   );
   return (
     <div>
-      <h2>{scoreLanguage}</h2> <p>{cookieValue}</p>
+      <h2>{scoreLanguage}</h2> <p data-testid="cookie-number">{cookieValue}</p>
     </div>
   );
 }
