@@ -86,7 +86,7 @@ This will launch the Cypress Test Runner.
 npx npm run start
 ```
 
-on port 3000[http://localhost:3000] should be executed before running Cypress tests to ensure that the development server is running.
+on port 3000 [http://localhost:3000] should be executed before running Cypress tests to ensure that the development server is running.
 
 4. In the Cypress Test Runner, click on a test file to run the tests.
 
