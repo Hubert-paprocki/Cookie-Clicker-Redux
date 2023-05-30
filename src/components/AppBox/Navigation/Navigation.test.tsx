@@ -93,8 +93,8 @@ describe("NavigationList", () => {
       </Provider>
     );
 
-    const earnCookiesLink = screen.getByText(pl.navigation.scoreboard);
-    fireEvent.click(earnCookiesLink);
+    const scoreboardLink = screen.getByText(pl.navigation.scoreboard);
+    fireEvent.click(scoreboardLink);
 
     const actions = store.getActions();
     expect(actions.length).toBe(1);
