@@ -25,25 +25,25 @@ To install and run the React app, follow these steps:
 1. Clone this repository:
 
 ```bash
-   git clone https://github.com/X-Tripen/Cookie-Clicker-Redux
+git clone https://github.com/X-Tripen/Cookie-Clicker-Redux
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-  cd cookie-clicker
+cd cookie-clicker
 ```
 
 3. Install the dependencies:
 
 ```bash
-  npm install
+npm install
 ```
 
 4. Start the development server:
 
 ```bash
-   npm start
+npm start
 ```
 
 This will start the development server at [http://localhost:3000](http://localhost:3000).
@@ -57,6 +57,24 @@ The `src` directory contains the main code for your React application. You can s
 The entry point for the application is `src/index.js`, where the root component is rendered.
 
 The `public` directory contains the public assets for your application, such as HTML and favicon files. You can customize the `public/index.html` file to include any additional scripts or stylesheets.
+
+## Running Cypress Tests
+
+Cypress is an end-to-end testing framework for web applications. To run the Cypress tests for this project, follow these steps:
+
+1. Make sure the development server is running.
+
+2. Open a new terminal window/tab and navigate to the project directory.
+
+3. Run the following command:
+
+```bash
+npx cypress open
+```
+
+This will launch the Cypress Test Runner.
+
+4. In the Cypress Test Runner, click on a test file to run the tests.
 
 ## Building for Production
 
@@ -75,22 +93,23 @@ You can then deploy the contents of the `build` directory to your web server or 
 Contributions to this React app template are always welcome! If you have any ideas, bug fixes, or improvements, please follow these steps:
 
 1. Fork the repository.
+
 2. Create a new branch:
 
 ```bash
-  git checkout -b my-feature
+git checkout -b my-feature
 ```
 
 3. Make your modifications and commit changes:
 
 ```bash
-   git commit -am 'Add my feature'
+git commit -am 'Add my feature'
 ```
 
 4. Push the branch:
 
 ```bash
-   git push origin my-feature
+git push origin my-feature
 ```
 
 5. Create a pull request.
@@ -103,9 +122,11 @@ The Cookie Clicker Redux project is licensed under the [MIT License](LICENSE). Y
 
 ## Contact
 
-If you have any questions, suggestions, or feedback, feel free to contact the project maintainer:
+If you
+
+have any questions, suggestions, or feedback, feel free to contact the project maintainer:
 
 - Name: Hubert Paprocki
-- Email: [hubertpaprocki.dev@gmail.com]
+- Email: hubertpaprocki.dev@gmail.com
 
 I hope you enjoy playing Cookie Clicker Redux! Happy clicking!
