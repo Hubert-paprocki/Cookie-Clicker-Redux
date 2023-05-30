@@ -79,7 +79,7 @@ describe("NavigationList", () => {
 
     const earnCookiesLink = screen.getByText(pl.navigation.earnCookies);
     const scoreboardLink = screen.getByText(pl.navigation.scoreboard);
-    const shopLink = screen.getByText(pl.navigation.scoreboard);
+    const shopLink = screen.getByText(pl.navigation.shop);
 
     expect(earnCookiesLink).toBeInTheDocument();
     expect(scoreboardLink).toBeInTheDocument();
@@ -99,6 +99,12 @@ describe("NavigationList", () => {
     const actions = store.getActions();
     expect(actions.length).toBe(1);
     expect(actions[0].type).toBe(changePage.type);
+
     expect(actions[0].payload).toBe("scoreboard");
+
+    setTimeout(() => {
+      expect(store.getState().navigation.link).toBe("scoreboard");
+    }, 0);
+    ///this is a very complicated function that does things unimaginable to normal humans
   });
 });
