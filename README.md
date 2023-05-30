@@ -43,7 +43,7 @@ npm install
 4. Start the development server:
 
 ```bash
-npm start
+npm run start
 ```
 
 This will start the development server at [http://localhost:3000](http://localhost:3000).
@@ -62,7 +62,13 @@ The `public` directory contains the public assets for your application, such as 
 
 Cypress is an end-to-end testing framework for web applications. To run the Cypress tests for this project, follow these steps:
 
-1. Make sure the development server is running.
+1. Make sure the development server is running. Start it with the following command:
+
+```bash
+npm run start
+```
+
+This will start the development server at [http://localhost:3000](http://localhost:3000).
 
 2. Open a new terminal window/tab and navigate to the project directory.
 
@@ -73,6 +79,14 @@ npx cypress open
 ```
 
 This will launch the Cypress Test Runner.
+
+3. Please note that the command:
+
+```bash
+npx npm run start
+```
+
+on port 3000[http://localhost:3000] should be executed before running Cypress tests to ensure that the development server is running.
 
 4. In the Cypress Test Runner, click on a test file to run the tests.
 
@@ -112,7 +126,9 @@ git commit -am 'Add my feature'
 git push origin my-feature
 ```
 
-5. Create a pull request.
+5.
+
+Create a pull request.
 
 Please ensure that your code follows the project's coding style and conventions.
 
@@ -122,9 +138,7 @@ The Cookie Clicker Redux project is licensed under the [MIT License](LICENSE). Y
 
 ## Contact
 
-If you
-
-have any questions, suggestions, or feedback, feel free to contact the project maintainer:
+If you have any questions, suggestions, or feedback, feel free to contact the project maintainer:
 
 - Name: Hubert Paprocki
 - Email: hubertpaprocki.dev@gmail.com
