@@ -31,7 +31,7 @@ function Button({
   }
   if (lang) {
     classes =
-      "z-20 bg-opacity-100 rounded-lg shadow-md shadow-neutral-900 hover:-translate-y-1 active:translate-y-0 active:duration-[50ms] duration-200 max-[500px]:absolute min-[500px]:block sm:absolute min-[500px]:top-12 right-0 min-[500px]:right-12 border-2 border-stone-800 overflow-hidden max-[500px]:w-14 max-[500px]:h-12 w-[4.5rem] h-14 flex";
+      "z-[100] bg-opacity-100 rounded-lg shadow-md shadow-neutral-900 hover:-translate-y-1 active:translate-y-0 active:duration-[50ms] duration-200 max-[500px]:absolute min-[500px]:block sm:absolute min-[500px]:top-12 right-0 min-[500px]:right-12 border-2 border-stone-800 overflow-hidden max-[500px]:w-14 max-[500px]:h-12 w-[4.5rem] h-14 flex";
   }
   if (shopBtn) {
     classes = `bg-green-400 bg-opacity-20 py-1 px-4 rounded-lg sm:rounded-full flex items-center justify-center shadow-md shadow-neutral-800hover:bg-opacity-50 duration-200 hover:-translate-y-0.5 active:translate-y-0 active:duration-75`;
