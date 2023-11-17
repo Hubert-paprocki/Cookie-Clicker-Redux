@@ -43,5 +43,12 @@
   },
   "history":{
     "earn":"You earned","autoEarn":["Worker earned" ," in "],"boughtItem":["You bought"," for "]
+  },
+  "modals":{
+    "welcomeModal":"cookie clicker is a popular incremental game where the goal is to accumulate as many cookies as possible by clicking on a giant cookie on the screen. as you progress, you can unlock upgrades to increase your cookie production and automate the process of clicking.",
+    "instructionModal":["In the game, your goal is to click on the large cookie to earn points. Each click increases the number of points you have.","Use the points you earn to upgrade your clicking abilities, such as increasing the point value per click, automatic point generation, etc."],
+    "closeBtn":"close",
+    "nextBtn":"next",
+    "insctructionsBtn":"insctructions"
   }
 }

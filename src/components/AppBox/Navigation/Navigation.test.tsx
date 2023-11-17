@@ -67,6 +67,7 @@ describe("NavigationList", () => {
         selectedLanguage: browserPolLangCheck ? pl : en,
         langSwitch: browserPolLangCheck ? "pl" : "en",
       },
+      modal: { modal: 1 },
     });
   });
 

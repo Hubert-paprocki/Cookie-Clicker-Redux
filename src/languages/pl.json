@@ -43,6 +43,13 @@
     },
     "history":{
       "earn":"Zarobiles","autoEarn":["Pracownik zarobil"," w "],"boughtItem":["Kupiles "," za"]
+    }, 
+     "modals":{
+      "welcomeModal":"cookie clicker to popularna gra inkrementalna, w ktorej celem jest nabywanie jak najwiekszej ilosci ciasteczek poprzez klikanie w gigantyczne ciasteczko na ekranie. w miare postepu mozesz odblokowywac ulepszenia, ktore zwieksza produkcje ciasteczek oraz zautomatyzuja proces klikania.",
+      "instructionModal":["W grze Twoim celem jest klikanie na duze ciastko, aby zdobywac punkty. Kazde klikniecie zwieksza liczbe punktow, ktore masz","Wykorzystuj zdobyte punkty, aby ulepszac swoje możliwosci klikania, takie jak zwiekszenie wartosci punktow za klikniecie, automatyczne generowanie punktow itp."],
+     "closeBtn":"zamknij",
+     "nextBtn":"dalej",
+     "insctructionsBtn":"instrukcja"
     }
   }
 

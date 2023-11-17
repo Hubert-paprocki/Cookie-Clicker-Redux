@@ -4,6 +4,7 @@ import navigationReducer from './slices/navigationSlice';
 import shopReducer from './slices/shopSlice';
 import scoreboardReducer from './slices/scoreboardSlice';
 import languageReducer from './slices/languageSlice';
+import modalReducer from './slices/modalSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
     navigation: navigationReducer,
     shop: shopReducer,
     scoreboard: scoreboardReducer,
-    language: languageReducer
+    language: languageReducer,
+    modal:modalReducer
   },
 });
 
